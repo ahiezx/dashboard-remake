@@ -1,7 +1,8 @@
 <template>
 
-<div class="" aria-label="Sidebar-1">
+<div class="bg-black md:text-tiny" aria-label="Sidebar-1">
    <DashboardSidebarComponentsTitle title="Overview"></DashboardSidebarComponentsTitle>
+
 </div>
 
 </template>

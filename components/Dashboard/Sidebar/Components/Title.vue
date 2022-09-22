@@ -1,7 +1,12 @@
 <template>
 
-    <div class="text-white p-3 sidebar_title font-extrabold">
-        <p>{{title}}</p>
+    <div class="text-white p-3 sidebar_title font-extrabold flex">
+        <div>
+            <p>{{title}}</p>
+        </div>
+        <div class="ml-auto">
+            <DashboardSidebarComponentsButtons></DashboardSidebarComponentsButtons>
+        </div>        
     </div>
 
 </template>

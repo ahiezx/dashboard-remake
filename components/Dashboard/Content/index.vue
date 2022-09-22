@@ -1,19 +1,12 @@
 <template>
 
-    <div class="bg-black content">
-        dasdas
+    <div class="bg-black align-top m-0 p-2" style="width:100%;">
+        <h4>sdasd</h4>
     </div>
 
 </template>
 
 <style>
-
-    .content {
-        display:inline;
-        height:100%;
-        width:100vw;
-        background-color:#333;
-    }
     
 </style>
 
