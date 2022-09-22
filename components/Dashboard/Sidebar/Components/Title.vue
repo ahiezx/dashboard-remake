@@ -1,6 +1,6 @@
 <template>
 
-    <div class="text-white p-3 sidebar_title font-extrabold flex">
+    <div class="text-white p-3 sidebar_title font-extrabold flex" :class="{'bg-green': true}">
         <div>
             <p>{{title}}</p>
         </div>
@@ -19,6 +19,10 @@
     letter-spacing: 0.05rem;
     text-transform: uppercase;
     background-color: #5111F3;
+}
+
+.bg-green {
+    background-color: #00AF54 !important;
 }
 
 </style>
