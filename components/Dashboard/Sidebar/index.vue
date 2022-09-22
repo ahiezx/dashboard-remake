@@ -10,7 +10,7 @@
 
     .sidebar_servers {
         display:table-cell;
-        width: 5%;
+        width: 6%;
         background-color: #131416;
         vertical-align: top;
     }
@@ -18,7 +18,7 @@
     .sidebar_controls {
         display:table-cell;
         width: 20%;
-        background-color: #111;
+        background-color: #1e1e20;
     }
 
     .sidebar_servers hr {

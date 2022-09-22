@@ -4,7 +4,10 @@ import { defineNuxtConfig } from "nuxt"
   export default defineNuxtConfig({
 
       // CSS
-      css: ['~/assets/css/main.css'],
+      css: [
+        '~/assets/css/main.css',
+        '~/assets/css/fonts.css',
+      ],
 
       // Build
       build: {

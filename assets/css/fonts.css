@@ -1,0 +1,88 @@
+
+@font-face {
+    font-family: 'AA-Regular';
+    src: url('/assets/fonts/AccordAlternate-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'AA-Bold';
+    src: url('/assets/fonts/AccordAlternate-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'AA-ExtraBold';
+    src: url('/assets/fonts/AccordAlternate-ExtraBold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'AA-Light';
+    src: url('/assets/fonts/AccordAlternate-Light.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'AA-Medium';
+    src: url('/assets/fonts/AccordAlternate-Medium.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'AA-Thin';
+    src: url('/assets/fonts/AccordAlternate-Thin.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Graphik-Medium';
+    src: url('/assets/fonts/Graphik-Medium.ttf') format('truetype');
+}
+
+/* Import all Tajawal fonts from /assets/fonts/ */
+
+@font-face {
+    font-family: 'Tajawal';
+    src: url('/assets/fonts/Tajawal-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Tajawal-Bold';
+    src: url('/assets/fonts/Tajawal-Bold.ttf') format('truetype');
+    /* font-weight: bold; */
+}
+
+@font-face {
+    font-family: 'Tajawal-ExtraBold';
+    src: url('/assets/fonts/Tajawal-ExtraBold.ttf') format('truetype');
+    /* font-weight: 800; */
+}
+
+.font-regular{
+    font-family: 'AA-Regular';
+}
+.font-bold{
+    font-family: 'AA-Bold';
+}
+.font-extrabold{
+    font-family: 'AA-ExtraBold';
+}
+.font-light{
+    font-family: 'AA-Light';
+}
+.font-medium{
+    font-family: 'AA-Medium';
+}
+.font-thin{
+    font-family: 'AA-Thin';
+}
+
+.font-graphik-medium{
+    font-family: 'Graphik-Medium';
+}
+
+.font-tajawal{
+    font-family: 'Tajawal';
+}
+
+.font-tajawal-bold{
+    font-family: 'Tajawal';
+    /* font-weight: bold; */
+}
+
+.font-tajawal-extrabold{
+    font-family: 'Tajawal';
+    /* font-weight: 800; */
+}

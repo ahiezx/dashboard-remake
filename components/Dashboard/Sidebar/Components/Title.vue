@@ -18,7 +18,7 @@
     font-weight: 600;
     letter-spacing: 0.05rem;
     text-transform: uppercase;
-    background-color: #7733e4;
+    background-color: #5111F3;
 }
 
 </style>
