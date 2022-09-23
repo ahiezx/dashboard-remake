@@ -1,6 +1,6 @@
 <template>
 
-    <div class="text-white p-3 sidebar_title font-extrabold flex" :class="{'bg-green': true}">
+    <div class="text-white p-3 sidebar_title font-extrabold flex" :class="{'bg-green': playerControls.playing}">
         <div>
             <p>{{title}}</p>
         </div>
@@ -30,6 +30,7 @@
 <script>
 
 export default {
+
     props: {
         title: {
             type: String,
@@ -38,4 +39,15 @@ export default {
     }
 }
 
+</script>
+
+
+<script setup>
+    import { usePlayerControls } from "/stores/player";
+
+    const playerControls = usePlayerControls();
+  
+    const { user, isPlaying } = playerControls;
+  
+    // await playerControls.initAuth();
 </script>

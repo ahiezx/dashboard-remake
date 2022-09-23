@@ -4,7 +4,7 @@
    <DashboardSidebarComponentsTitle title="Overview"></DashboardSidebarComponentsTitle>
    <div class="p-3 space-y-2">
       <NuxtLink class="btn-generic" to="/"><i class="fa-brands fa-discord generic-icon"></i> Find Servers</NuxtLink>
-      <NuxtLink class="btn-generic" to="/">Leaderboard</NuxtLink>
+      <NuxtLink class="btn-generic" to="/"><i class="fa-brands fa-discord generic-icon"></i> Leaderboard</NuxtLink>
       <NuxtLink class="btn-generic" to="/">Premium</NuxtLink>
       <NuxtLink class="btn-generic" to="/">Nuxt website</NuxtLink>
       <NuxtLink class="btn-generic" to="/">Nuxt website</NuxtLink>

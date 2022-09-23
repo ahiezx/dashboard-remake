@@ -1,13 +1,19 @@
+
+
+
 <template>
     <div>
-        <i class="fa-sharp fa-solid fa-expand"></i>
+        <i class="fa-sharp fa-solid fa-expand" @click="outerMargin.toggleMargin()"></i>
     </div>
 </template>
-<script>
-export default {
-    
-}
+
+<script setup>
+    import { useOuterMargin } from "/stores/margin";
+
+    const outerMargin = useOuterMargin();
+
 </script>
+
 <style>
     
 </style>

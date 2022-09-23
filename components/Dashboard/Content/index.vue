@@ -1,7 +1,7 @@
 <template>
 
     <div class="align-top m-0 p-2 bg-innerdark" style="width:100%;">
-        <h4>sdasd</h4>
+        <h4 @click="playerControls.togglePlay()">{{playerControls.playing}}</h4>
     </div>
 
 </template>
@@ -14,6 +14,9 @@
 
 </style>
 
-<script>
+<script setup>
+    import { usePlayerControls } from "/stores/player";
 
+    const playerControls = usePlayerControls();
+    
 </script>

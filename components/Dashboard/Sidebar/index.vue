@@ -1,4 +1,5 @@
-<template>
+<template class="">
+
 
     <DashboardSidebarServers class="sidebar sidebar_servers"></DashboardSidebarServers>
     <DashboardSidebarControls class="sidebar sidebar_controls"></DashboardSidebarControls>
@@ -7,10 +8,9 @@
 
 <style>
 
-
     .sidebar_servers {
         display:table-cell;
-        width: 6%;
+        width: 4.8%;
         background-color: #131416;
         vertical-align: top;
     }
