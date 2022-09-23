@@ -9,6 +9,23 @@ import { defineNuxtConfig } from "nuxt"
         '~/assets/css/fonts.css',
       ],
       
+
+      // buildModules: [
+
+      //   [
+      //     '@pinia/nuxt',
+      //     {
+      //       autoImports: [
+      //         // automatically imports `defineStore`
+      //         'defineStore', // import { defineStore } from 'pinia'
+      //         // automatically imports `defineStore` as `definePiniaStore`
+      //         ['defineStore', 'definePiniaStore'], // import { defineStore as definePiniaStore } from 'pinia'
+      //       ],
+      //     },
+      //   ],
+
+      // ],
+
       // Plugins
       modules: [
         // ...
@@ -23,7 +40,12 @@ import { defineNuxtConfig } from "nuxt"
             ],
           },
         ],
-      ],    
+      ],
+
+      // ... Imports
+      // imports: {
+      //   dirs: ['stores'],
+      // },
 
       // Build
       build: {
