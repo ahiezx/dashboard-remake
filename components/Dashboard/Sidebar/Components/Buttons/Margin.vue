@@ -3,7 +3,11 @@
 
 <template>
     <div>
-        <i class="fa-sharp fa-solid fa-expand" @click="outerMargin.toggleMargin()"></i>
+        <i class="fa-sharp fa-solid" @click="outerMargin.toggleMargin()" :class="
+        {
+            'fa-expand': outerMargin.margin,
+            'fa-compress': !outerMargin.margin
+        }"></i>
     </div>
 </template>
 

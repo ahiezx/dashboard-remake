@@ -18,11 +18,11 @@
     font-weight: 600;
     letter-spacing: 0.05rem;
     text-transform: uppercase;
-    background-color: #5111F3;
+    background-color: #5333E4;
 }
 
 .bg-green {
-    background-color: #00AF54 !important;
+    background-color: #1CB25B !important;
 }
 
 </style>

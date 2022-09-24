@@ -17,7 +17,7 @@
 
     .sidebar_controls {
         display:table-cell;
-        width: 20%;
+        width: 15%;
         background-color: #1e1e20;
     }
 

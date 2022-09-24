@@ -2,7 +2,7 @@
 
 <div class="bg-black md:text-xs side_controls" aria-label="Sidebar-1">
    <DashboardSidebarComponentsTitle title="Overview"></DashboardSidebarComponentsTitle>
-   <div class="p-3 space-y-2">
+   <div class="p-3 space-y-1.5 space-x-1">
       <div class="mt-1 mb-3">
 
          <form class="flex items-center">   
@@ -16,14 +16,23 @@
          </form>
 
       </div>
+      <h4
+      class="text-gray-400 text-sm pt-1 font-extrabold uppercase tracking-wider"
+      >Siden Community</h4>
       <NuxtLink class="btn-generic" to="/"> Find Servers</NuxtLink>
       <NuxtLink class="btn-generic" to="/"> Leaderboard</NuxtLink>
-      <hr>
+      <!-- <hr> -->
       <h4
-      class="text-gray-400 text-sm font-extrabold uppercase tracking-wider"
+      class="text-gray-400 text-sm pt-3 font-extrabold uppercase tracking-wider"
       >User Overview</h4>
       <NuxtLink class="btn-generic" to="/"> Account</NuxtLink>
       <NuxtLink class="btn-generic" to="/"> Statistics</NuxtLink>
+      <NuxtLink class="btn-generic" to="/"> Friends</NuxtLink>
+
+      <h5 class="text-gray-600 text-sm pt-1 font-extrabold uppercase">
+         Other
+      </h5>
+
       <NuxtLink class="btn-generic" to="/"> Support</NuxtLink>
       <NuxtLink class="btn-generic btn-generic-red" to="/"> Log out</NuxtLink>
    </div>
@@ -35,7 +44,7 @@
 
    .side_controls hr{
       border: 1px solid #242428;
-      width: 100%;
+      width: 90%;
    }
 
    .bg-periwinkle {
@@ -48,8 +57,9 @@
       background-color: #25282b;
       border-radius: 3px;
       display: block;
-      text-transform: uppercase;
-      width: 100%;
+      text-transform: capitalize;
+      /* width: 100%; */
+      /* width: 90%; */
       font-size:16px;
       font-weight: 500;
       /* font-size: 0.855rem;  */

@@ -40,7 +40,6 @@
     bottom:0px;
     background-color: #00AF54;
     width:100%;
-    height: 50px;
 }
 
 .outer {
