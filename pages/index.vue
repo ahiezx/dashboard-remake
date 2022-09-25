@@ -2,7 +2,7 @@
 
     <div>
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
 
         <!-- <h1 class="firstColor text-5xl lowercase">Ahmad Bakdalieh</h1> -->
         <!-- <dashboard text="test" s="background-color:black;margin:15px;" background="bg-stone-700"  :dismiss="true"></DashButton> -->

@@ -1,103 +1,105 @@
 <template>
 
-    <div class="align-top m-0 p-2 bg-innerdark" style="width:100%;position: relative;">
-        <h4 @click="playerControls.togglePlay()">{{playerControls.playing}}</h4>
+    <div class="align-top m-0 p-2 bg-innerdark " style="width:100%;position: relative;">
+        <!-- <h4 @click="playerControls.togglePlay()">{{playerControls.playing}}</h4> -->
 
-        <div class="flex-col space-y-5">
-
+        <div class="m-5">
+          <div class="
+          container mx-auto
+          text-white
+          text-center
+          font-extrabold
+          text-2xl
+          p-20
+          shadow-2xl
+          rounded
+          " style="background-image: url('https://exploringbits.com/wp-content/uploads/2022/01/discord-banner-4.gif');background-repeat: no-repeat;background-size: cover;">
             <div class="
-            container
-            mx-auto
+            flex
+            justify-center
             ">
-                <div class="grid grid-cols-2 text-white">
-                    <div class="
-
-                        mx-auto
-
-                    ">
-
-                        <h2 class="
-                            text-2xl
-                            font-extrabold
-                            
-                            mb-2
-                        ">Account</h2>
-                        <p class="
-                            text-sm
-                            font-regular
-                            text-gray-400
-                            mb-2
-                        ">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
-                    </div>
-                    <div class="my-auto pt-2 mx-auto">
-
-                    <label class="form-switch">
-                        <input type="checkbox">
-                        <i></i>
-                        
-                    </label>
-
-                    </div>
-                    <div class="">
-
-                        <!-- <p>dasd</p> -->
-
-                    </div>
-                    <div class="">
-
-                        <!-- <p>dasd</p> -->
-
-                    </div>
-                </div>
+              <img src="https://picsum.photos/500/500" alt="your profile" width="64" class="rounded-full align-middle mr-2 block">
             </div>
+            <p class="my-auto mx-auto align-middle block">Ahmad#4444</p>
 
-            <div class="
-            container
-            mx-auto
+          </div>
+      </div>
+
+        <div class="p-5 space-y-5 mt-5">
+            
+          <!-- <div class="container mx-auto">
+            <div class="grid grid-cols-2 gap-4
+            
             ">
-                <div class="grid grid-cols-2 text-white">
-                    <div class="
 
-                        mx-auto
+                <div class="border flex
+                border-gray-700
+                p-10
+                rounded-sm
+                shadow-lg
+                bg-blue-generic
+                ">
+                <i class="
+                fad fa-trophy
+                text-4xl
+                my-auto
+                mr-4
+                text-white
+                
+                "></i>                   
+                <div>
+                    <p class="text-gray-200 text-3xl font-extrabold uppercase">Level</p>
+                    <h4 class="font-semibold text-2xl text-white">14</h4>
+                </div>             
 
-                    ">
-
-                        <h2 class="
-                            text-2xl
-                            font-extrabold
-                            
-                            mb-2
-                        ">Account</h2>
-                        <p class="
-                            text-sm
-                            font-regular
-                            text-gray-400
-                            mb-2
-                        ">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
-                    </div>
-                    <div class="my-auto pt-2 mx-auto">
-
-                    <label class="form-switch">
-                        <input type="checkbox">
-                        <i></i>
-                        
-                    </label>
-
-                    </div>
-                    <div class="">
-
-                        <!-- <p>dasd</p> -->
-
-                    </div>
-                    <div class="">
-
-                        <!-- <p>dasd</p> -->
-
-                    </div>
                 </div>
+
+                <div class="border flex
+                border-gray-700
+                p-10
+                rounded-sm
+                shadow-lg
+                bg-blue-generic
+                ">
+                <i class="
+                fad fa-coins
+                text-4xl
+                my-auto
+                mr-4
+                text-white
+                
+                "></i>                   
+                <div>
+                    <p class="text-gray-200 text-3xl font-extrabold uppercase">Balance</p>
+                    <h4 class="font-semibold text-2xl text-white">$12,900</h4>
+                </div>             
+
+                </div>
+
             </div>
+          </div> -->
+
+            <DashboardContentSettings title="Notifications" description=
+            "
+            Allow Siden to send you notifications when you receive a message or a friend request.
+            "></DashboardContentSettings>
+            <DashboardContentSettings title="Privacy" description="
+            Allow Siden to use your data to improve your experience. Disabling this will only disable the use of your data for analytics and marketing purposes. Your data will still be used for authentication and security purposes.
+            "></DashboardContentSettings>
+            <DashboardContentSettings title="
+            Dark Mode
+            " description="
+            Enable dark mode for Siden.
+            "></DashboardContentSettings>
+
+            <!-- <DashboardContentSettings></DashboardContentSettings>
+            <DashboardContentSettings></DashboardContentSettings>
+            <DashboardContentSettings></DashboardContentSettings>
+            <DashboardContentSettings></DashboardContentSettings>
+            <DashboardContentSettings></DashboardContentSettings>
+            <DashboardContentSettings></DashboardContentSettings>
+            <DashboardContentSettings></DashboardContentSettings> -->
+            
         </div>
     </div>
 
@@ -107,6 +109,10 @@
     
     .bg-innerdark {
         background-color: #242428 !important;
+    }
+
+    .bg-blue-generic {
+      background-color:#5333E4;
     }
 
     .form-switch {

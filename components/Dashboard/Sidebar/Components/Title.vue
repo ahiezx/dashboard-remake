@@ -1,12 +1,13 @@
 <template>
-
-    <div class="text-white p-3 sidebar_title font-extrabold flex" :class="{'bg-green': playerControls.playing}">
-        <div>
-            <p>{{title}}</p>
+    <div>
+        <div class="text-white p-3 sidebar_title font-extrabold flex" :class="{'bg-green': playerControls.playing}">
+            <div>
+                <p>{{title}}</p>
+            </div>
+            <div class="ml-auto">
+                <DashboardSidebarComponentsButtons></DashboardSidebarComponentsButtons>
+            </div>        
         </div>
-        <div class="ml-auto">
-            <DashboardSidebarComponentsButtons></DashboardSidebarComponentsButtons>
-        </div>        
     </div>
 
 </template>
