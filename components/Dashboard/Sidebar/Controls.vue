@@ -2,7 +2,7 @@
 
 <div class="bg-black md:text-xs side_controls" aria-label="Sidebar-1">
    <DashboardSidebarComponentsTitle title="Overview"></DashboardSidebarComponentsTitle>
-   <div class="p-3 space-y-1.5 space-x-1">
+   <div class="p-3 space-y-1.5 space-x-1 xffg">
       <div class="mt-1 mb-3">
 
          <form class="flex items-center">   
@@ -20,12 +20,12 @@
       class="text-gray-400 text-sm pt-1 font-extrabold uppercase tracking-wider"
       >Siden Community</h4>
       <NuxtLink class="btn-generic" to="/"><i class="fad fa-compass"></i><span>Find Servers</span></NuxtLink>
-      <NuxtLink class="btn-generic" to="/"><i class="fad fa-trophy-alt"></i><span style="position:relative;right:3px;">Leaderboard</span></NuxtLink>
+      <NuxtLink class="btn-generic" to="/leaderboard"><i class="fad fa-trophy-alt"></i><span style="position:relative;right:3px;">Leaderboard</span></NuxtLink>
       <!-- <hr> -->
       <h4
       class="text-gray-400 text-sm pt-3 font-extrabold uppercase tracking-wider"
       >User Overview</h4>
-      <NuxtLink class="btn-generic" to="/"><i class="fas fa-user"></i><span>Account</span></NuxtLink>
+      <NuxtLink class="btn-generic" to="/account"><i class="fas fa-user"></i><span>Account</span></NuxtLink>
       <NuxtLink class="btn-generic" to="/"><i class="fad fa-terminal"></i><span style="position:relative;right:4px;">Commands</span></NuxtLink>
 
       <h5 class="text-gray-600 text-sm pt-1 font-extrabold uppercase">
@@ -98,6 +98,14 @@
    .generic-icon {
       margin-right: 0.2rem;
       font-size: 0.95rem;
+   }
+
+   .xffg .router-link-exact-active {
+      background-color: #5333E4;
+   }
+
+   .xffg .router-link-active {
+      background-color: #5333E4;
    }
 
 </style>

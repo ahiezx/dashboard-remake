@@ -3,11 +3,11 @@
     
         <div class="player_components space-x-4">
             
-            <i class="fa-solid fa-play"></i>
-            <i class="fa-solid fa-pause"></i>
-            <i class="fa-solid fa-stop"></i>
-            <i class="fa-solid fa-step-forward"></i>
-            <i class="fa-solid fa-step-backward"></i>
+            <i class="fas fa-play"></i>
+            <i class="fas fa-pause"></i>
+            <i class="fas fa-stop"></i>
+            <i class="fas fa-step-forward"></i>
+            <i class="fas fa-step-backward"></i>
 
         </div>
 

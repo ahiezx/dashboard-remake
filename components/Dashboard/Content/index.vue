@@ -89,7 +89,7 @@
             <DashboardContentSettings title="
             Dark Mode
             " description="
-            Enable dark mode for Siden.
+            Enable dark mode
             "></DashboardContentSettings>
 
             <!-- <DashboardContentSettings></DashboardContentSettings>
