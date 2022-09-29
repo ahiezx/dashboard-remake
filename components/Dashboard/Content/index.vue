@@ -82,15 +82,21 @@
             <DashboardContentSettings title="Notifications" description=
             "
             Allow Siden to send you notifications when you receive a message or a friend request.
-            "></DashboardContentSettings>
+            "
+            action="https://jsonplaceholder.typicode.com/todos/1"
+            ></DashboardContentSettings>
             <DashboardContentSettings title="Privacy" description="
             Allow Siden to use your data to improve your experience. Disabling this will only disable the use of your data for analytics and marketing purposes. Your data will still be used for authentication and security purposes.
-            "></DashboardContentSettings>
+            "
+            action="https://jsonplaceholder.typicode.com/todos/2"
+            ></DashboardContentSettings>
             <DashboardContentSettings title="
             Dark Mode
             " description="
             Enable dark mode
-            "></DashboardContentSettings>
+            "
+            action="https://jsonplaceholder.typicode.com/todos/3"
+            ></DashboardContentSettings>
 
             <!-- <DashboardContentSettings></DashboardContentSettings>
             <DashboardContentSettings></DashboardContentSettings>
