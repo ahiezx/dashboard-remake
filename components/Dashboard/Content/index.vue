@@ -25,7 +25,7 @@
           </div>
       </div>
 
-        <div class="p-5 space-y-5 mt-5">
+        <div class="p-5 space-y-5 mt-5" style="overflow-y: scroll;height:48vh;">
             
           <!-- <div class="container mx-auto">
             <div class="grid grid-cols-2 gap-4

@@ -29,21 +29,10 @@
                         text-right
                     ">
 
-                    <label class="form-switch">
-                        <input type="checkbox">
-                        <i></i>
-                        
-                    </label>
-
-                    </div>
-                    <div class="">
-
-                        <!-- <p>dasd</p> -->
-
-                    </div>
-                    <div class="">
-
-                        <!-- <p>dasd</p> -->
+                        <label class="form-switch">
+                            <input type="checkbox" :checked="checked" @click="sendAPI()">
+                            <i></i>
+                        </label>
 
                     </div>
                 </div>
@@ -55,6 +44,30 @@
 export default {
     
     props: ['title', 'description', 'action'],
+
+    data() {
+        return {
+            API: 'http://localhost:8000/',
+            checked: false
+        }
+    },
+
+    methods: {
+
+        async sendAPI() {
+            // Send API request to this.action and set this.checked to the response
+            let action = this.action
+            const response = await fetch(action, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'text/html'
+                }
+            })
+            const data = await response.json()
+            this.checked = !this.checked
+            console.log(data)
+        }
+    }
 
 }
 </script>

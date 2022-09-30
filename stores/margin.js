@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 export const useOuterMargin = defineStore('outerMargin', {
 
     state: () => ({
-        margin: true,
+        margin: false,
     }),
 
     getters: {

@@ -23,7 +23,7 @@
 
 .body, html {
     background-color: rgb(56, 56, 56);
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
 }
 
 .pack {
