@@ -8,6 +8,10 @@
 
 <style>
 
+    .sidebar {
+        height: 120vh;
+    }
+
     .sidebar_servers {
         display:table-cell;
         width: 4.8%;
@@ -18,6 +22,7 @@
     .sidebar_controls {
         display:table-cell;
         width: 15%;
+        
         background-color: #1e1e20;
     }
 

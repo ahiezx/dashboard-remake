@@ -41,6 +41,25 @@
 
 <style>
 
+   .side_controls::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+   .side_controls::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+   .side_controls::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+   .side_controls::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
    .side_controls hr{
       border: 1px solid #242428;
       width: 90%;
