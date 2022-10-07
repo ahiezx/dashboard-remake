@@ -3,6 +3,7 @@
         <div class="
             container
             mx-auto
+            toggleSwitch
             ">
                 <div class="grid grid-cols-2 text-white">
                     <div class="
@@ -71,6 +72,16 @@ export default {
 
 }
 </script>
-<style lang="">
-    
+<style>
+    @media only screen and (max-width: 768px) {
+        .toggleSwitch {
+            /* padding: 1rem; */
+        }
+        .toggleSwitch h2 {
+            font-size: 1.2rem !important;
+        }
+        .toggleSwitch p {
+            font-size: 0.8rem !important;
+        }
+    }
 </style>

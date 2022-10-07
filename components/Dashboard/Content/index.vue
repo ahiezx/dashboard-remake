@@ -1,6 +1,6 @@
 <template>
 
-    <div class="align-top m-0 p-2 bg-innerdark " style="width:100%;position: relative;">
+    <div v-if="contentPage == 'account'" class="align-top m-0 p-2 bg-innerdark " style="width:100%;position: relative;">
         <!-- <h4 @click="playerControls.togglePlay()">{{playerControls.playing}}</h4> -->
 
         <div class="m-5">
@@ -13,6 +13,7 @@
           p-20
           shadow-2xl
           rounded
+          banner
           " style="background-image: url('https://exploringbits.com/wp-content/uploads/2022/01/discord-banner-4.gif');background-repeat: no-repeat;background-size: cover;">
             <div class="
             flex
@@ -26,71 +27,25 @@
       </div>
 
         <div class="p-5 space-y-5 mt-5" style="overflow-y: scroll;height:48vh;">
-            
-          <!-- <div class="container mx-auto">
-            <div class="grid grid-cols-2 gap-4
-            
-            ">
-
-                <div class="border flex
-                border-gray-700
-                p-10
-                rounded-sm
-                shadow-lg
-                bg-blue-generic
-                ">
-                <i class="
-                fad fa-trophy
-                text-4xl
-                my-auto
-                mr-4
-                text-white
-                
-                "></i>                   
-                <div>
-                    <p class="text-gray-200 text-3xl font-extrabold uppercase">Level</p>
-                    <h4 class="font-semibold text-2xl text-white">14</h4>
-                </div>             
-
-                </div>
-
-                <div class="border flex
-                border-gray-700
-                p-10
-                rounded-sm
-                shadow-lg
-                bg-blue-generic
-                ">
-                <i class="
-                fad fa-coins
-                text-4xl
-                my-auto
-                mr-4
-                text-white
-                
-                "></i>                   
-                <div>
-                    <p class="text-gray-200 text-3xl font-extrabold uppercase">Balance</p>
-                    <h4 class="font-semibold text-2xl text-white">$12,900</h4>
-                </div>             
-
-                </div>
-
-            </div>
-          </div> -->
-
-            <DashboardContentSettings title="Notifications" description=
+        
+            <DashboardContentComponentsToggle title="Notifications" description=
             "
             Allow Siden to send you notifications when you receive a message or a friend request.
-            "></DashboardContentSettings>
-            <DashboardContentSettings title="Privacy" description="
+            "
+            action="https://jsonplaceholder.typicode.com/todos/1" 
+            ></DashboardContentComponentsToggle>
+            <DashboardContentComponentsToggle title="Privacy" description="
             Allow Siden to use your data to improve your experience. Disabling this will only disable the use of your data for analytics and marketing purposes. Your data will still be used for authentication and security purposes.
-            "></DashboardContentSettings>
-            <DashboardContentSettings title="
+            "
+            action="https://jsonplaceholder.typicode.com/todos/2" 
+            ></DashboardContentComponentsToggle>
+            <DashboardContentComponentsToggle title="
             Dark Mode
             " description="
             Enable dark mode
-            "></DashboardContentSettings>
+            "
+            action="https://jsonplaceholder.typicode.com/todos/3" 
+            ></DashboardContentComponentsToggle>
 
             <!-- <DashboardContentSettings></DashboardContentSettings>
             <DashboardContentSettings></DashboardContentSettings>
@@ -101,6 +56,12 @@
             <DashboardContentSettings></DashboardContentSettings> -->
             
         </div>
+    </div>
+
+    <div class="align-top m-0 p-2 bg-innerdark" v-else>
+
+        <h1 class="p-5 bg-white rounded">nothing here to show</h1>
+
     </div>
 
 </template>
@@ -164,11 +125,56 @@
 .form-switch input:checked + i::before { transform: translate3d(18px, 2px, 0) scale3d(0, 0, 0); }
 .form-switch input:checked + i::after { transform: translate3d(22px, 2px, 0); }
 
+@media (prefers-reduced-motion: reduce) {
+  .form-switch i::before {
+    transition-duration: 0.1s;
+  }
+  .form-switch i::after {
+    transition-duration: 0.1s;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .banner {
+    
+  }
+  .form-switch i {
+    width: 36px;
+    height: 20px;
+  }
+  .form-switch i::before {
+    width: 32px;
+    height: 16px;
+    border-radius: 8px;
+  }
+  .form-switch i::after {
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+  }
+  .form-switch:active i::after {
+    width: 20px;
+  }
+  .form-switch:active input:checked + i::after {
+    transform: translate3d(12px, 2px, 0);
+  }
+  .form-switch input:checked + i::before {
+    transform: translate3d(14px, 2px, 0) scale3d(0, 0, 0);
+  }
+  .form-switch input:checked + i::after {
+    transform: translate3d(16px, 2px, 0);
+  }
+}
+
+
 </style>
 
-<script setup>
-    import { usePlayerControls } from "/stores/player";
+<script>
 
-    const playerControls = usePlayerControls();
-    
+export default {
+
+    props:['contentPage'],
+
+}
+
 </script>
