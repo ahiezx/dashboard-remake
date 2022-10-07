@@ -1,6 +1,6 @@
 <template>
 
-    <div v-if="contentPage == 'account'" class="align-top m-0 p-2 bg-innerdark " style="width:100%;position: relative;">
+    <div v-if="contentPage == 'account'" class="align-top m-0 p-2 bg-innerdark innerContent" style="width:100%;position: relative;">
         <!-- <h4 @click="playerControls.togglePlay()">{{playerControls.playing}}</h4> -->
 
         <div class="m-5">
@@ -166,6 +166,13 @@
   }
 }
 
+@media only screen and (max-width: 558px) {
+
+  .dashboard_content {
+    width: 100% !important;
+  }
+
+}
 
 </style>
 

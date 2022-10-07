@@ -30,7 +30,7 @@
 
     .sidebar_controls {
         display:table-cell;
-        min-width: 200px;
+        min-width: 248px;
         background-color: #1e1e20;
     }
 
@@ -81,7 +81,7 @@
             display: none;
         }
         .sidebar_controls {
-             
+             min-width:65px;
         }
         .sidebar_controls .btn-generic span{
             /* width: 100%; */
@@ -89,14 +89,50 @@
         }
         .sidebar_controls .btn-generic {
             width: fit-content;
+            padding:0px;
+            background-color: transparent;
         }
         .sidebar_controls .sidebar_title {
             display: none;
         }
-        .sidebar_controls #simple-search {
+        .sidebar_controls .searchbar {
             display: none;
         }
-        
+        .sidebar_controls h4,h5 {
+            display: none;
+        }
+        .xffg {
+            /* text-align: center; */
+            padding: 2px;
+        }
+        .xffg i {
+            /* font-size: 20px; */
+            text-align: center;
+            margin:auto;
+        }
+        .xffg .btn-generic {
+            padding:15px;
+            margin:0 !important;
+            text-align: center;
+            width: 100%;
+        }
+        .xffg .btn-generic:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 0px;
+        }
+        .xffg .router-link-exact-active {
+            background-color: #5333E4;
+            border-radius: 0;
+        }
+
+        .xffg .router-link-active {
+            background-color: #5333E4;
+            border-radius: 0;
+        }
+        .xffg .router-link-active:hover {
+            background-color: #5333E4;
+        }
+
         
     }
 
