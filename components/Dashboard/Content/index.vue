@@ -58,6 +58,43 @@
         </div>
     </div>
 
+    <div v-else-if="contentPage == 'leaderboard'" class="align-top m-0 p-2 bg-innerdark innerContent">
+        <div class="leaderboard_table">
+          <table>
+            <tr>
+              <th class="lb_rank">Rank</th>
+              <th class="lb_xp">Rating</th>
+              <th class="lb_username">Username</th>
+              <th class="lb_level">Games Won</th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>0.45 K/O</td>
+              <td>Ahmad#4444</td>
+              <td>252</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>0.45 K/O</td>
+              <td>Flex#5919</td>
+              <td>252</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>0.45 K/O</td>
+              <td>Username#0000</td>
+              <td>252</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>0.45 K/O</td>
+              <td>Prototype#1224</td>
+              <td>252</td>
+            </tr>                                    
+          </table>
+        </div>
+    </div>
+
     <div class="align-top m-0 p-2 bg-innerdark" v-else>
 
         <h1 class="p-5 bg-white rounded">nothing here to show</h1>
@@ -68,19 +105,65 @@
 
 <style>
     
-    .bg-innerdark {
-        background-color: #242428 !important;
-    }
+.bg-innerdark {
+    background-color: #242428 !important;
+}
 
-    .bg-blue-generic {
-      background-color:#5333E4;
-    }
+.bg-blue-generic {
+  background-color:#5333E4;
+}
 
-    .form-switch {
+.form-switch {
   display: inline-block;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }
+
+.leaderboard_table {
+  overflow-y: scroll;
+  height: 90vh;
+  margin: 0;
+}
+
+.leaderboard_table table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 4px;
+}
+
+.leaderboard_table table tr {
+  font-family: 'Tajawal-Bold';
+  border-bottom: 2px solid lightgray;
+}
+.leaderboard_table table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.leaderboard_table table tr:nth-child(odd) {
+  background-color: #ddd;
+}
+.leaderboard_table table tr:hover {
+  background-color: #ddd;
+}
+.leaderboard_table table th {
+  padding:12px;
+  text-align: left;
+  background-color: #393C45;
+  color: white;
+}
+
+.leaderboard_table table td {
+  padding:12px;
+  text-align: left;
+  color: black;
+}
+
+.leaderboard_table .lb_rank {
+  width: 10%;
+}
+.leaderboard_table .lb_username {
+  width: 50%;
+}
+
 .form-switch i {
   @apply bg-gray-600;
   position: relative;

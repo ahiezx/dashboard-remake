@@ -9,7 +9,7 @@
 <style>
 
     .sidebar {
-        height: 100vh;
+        height: 80vh;
     }
 
     .sidebar_servers {
