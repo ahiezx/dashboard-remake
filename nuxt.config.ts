@@ -7,12 +7,11 @@ import { defineNuxtConfig } from "nuxt"
       css: [
         '~/assets/css/main.css',
         '~/assets/css/fonts.css',
-        '@fortawesome/fontawesome-svg-core/styles.css',
       ],
       
 
       // Plugins
-      plugins: ["~/plugins/fontawesome.js"],
+      // plugins: ["~/plugins/fontawesome.js"],
       modules: [
         // ...
         [

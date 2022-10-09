@@ -73,7 +73,7 @@
 
 .dashboard_content {
     display:table-cell;
-    width:80%;
+    width:100%;
     height:100vh;
     background-color: rgb(31, 31, 31);
 }

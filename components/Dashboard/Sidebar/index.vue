@@ -20,8 +20,8 @@
     }
 
     .sidebar_servers .img_obj {
-        width: 50px;
-        height: 50px;
+        max-width: 50px;
+        max-height: 50px;
         /* border-radius: 50%; */
         /* margin: 10px 10px 10px 10px; */
         background-color: #00AF54;
