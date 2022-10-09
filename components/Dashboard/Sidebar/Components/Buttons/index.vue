@@ -22,8 +22,7 @@ export default {
 .notch i:hover {
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 50%;
-    transition: 0.15s ease-in-out;
-
+    transition: 0.1s ease-in-out;
 }
 
 </style>

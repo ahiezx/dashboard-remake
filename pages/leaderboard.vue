@@ -1,15 +1,12 @@
 <template>
 
     <div>
-
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
-
         <!-- <h1 class="firstColor text-5xl lowercase">Ahmad Bakdalieh</h1> -->
         <!-- <dashboard text="test" s="background-color:black;margin:15px;" background="bg-stone-700"  :dismiss="true"></DashButton> -->
         <div class="outer">
             <div class="pack" :class="{'outer_margin': outerMargin.margin}">
                 <DashboardSidebar class="dashboard_sidebar"></DashboardSidebar>
-                <DashboardContent class="dashboard_content"></DashboardContent>
+                <DashboardContent class="dashboard_content" contentPage="leaderboard"></DashboardContent>
                 <div style="position:relative;" v-if="player.playing">
                     <DashboardPlayer class="player_controls"></DashboardPlayer>
                 </div>

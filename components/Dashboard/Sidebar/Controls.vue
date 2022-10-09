@@ -5,7 +5,7 @@
    <div class="p-3 space-y-1.5 space-x-1 xffg">
       <div class="mt-1 mb-3">
 
-         <form class="flex items-center">   
+         <form class="flex items-center searchbar">   
             <label for="simple-search" class="sr-only">Search</label>
             <div class="relative w-full">
                <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
@@ -32,8 +32,8 @@
          Other
       </h5>
 
-      <NuxtLink class="btn-generic" to="/">Support</NuxtLink>
-      <NuxtLink class="btn-generic btn-generic-red" to="/"> Log out</NuxtLink>
+      <!-- <NuxtLink class="btn-generic" to="/">Support</NuxtLink> -->
+      <!-- <NuxtLink class="btn-generic btn-generic-red" to="/"> Log out</NuxtLink> -->
    </div>
 </div>
 
@@ -126,6 +126,8 @@
    .xffg .router-link-active {
       background-color: #5333E4;
    }
+   
+
 
 </style>
 
