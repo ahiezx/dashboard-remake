@@ -67,30 +67,12 @@
               <th class="lb_username">Username</th>
               <th class="lb_level">Games Won</th>
             </tr>
-            <tr>
-              <td>1</td>
-              <td>0.45 K/O</td>
-              <td>Ahmad#4444</td>
-              <td>252</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>0.45 K/O</td>
-              <td>Flex#5919</td>
-              <td>252</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>0.45 K/O</td>
-              <td>Username#0000</td>
-              <td>252</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>0.45 K/O</td>
-              <td>Prototype#1224</td>
-              <td>252</td>
-            </tr>                                    
+              <tr v-for="item in 5">
+                <td class="lb_rank">{{item}}</td>
+                <td class="lb_xp">1000</td>
+                <td class="lb_username">Ahmad</td>
+                <td class="lb_level">100</td>
+              </tr>
           </table>
         </div>
     </div>
@@ -138,28 +120,30 @@
 
 .leaderboard_table table tr {
   font-family: 'Tajawal-Bold';
-  border-bottom: 2px solid lightgray;
+  border-bottom: 2px solid #222;
 }
 .leaderboard_table table tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: rgba(0, 0, 0, 0.24);
 }
 .leaderboard_table table tr:nth-child(odd) {
-  background-color: #ddd;
+  background-color: rgba(0, 0, 0, 0.12);
 }
 .leaderboard_table table tr:hover {
-  background-color: #ddd;
+  /* background-color: #ddd; */
+  background-color: rgba(0, 0, 0, 0.24);
 }
 .leaderboard_table table th {
   padding:12px;
   text-align: left;
-  background-color: #393C45;
+  background-color: rgb(62, 62, 62);
   color: white;
 }
 
 .leaderboard_table table td {
   padding:12px;
   text-align: left;
-  color: black;
+  /* color: black; */
+  color: white;
 }
 
 .leaderboard_table .lb_rank {
