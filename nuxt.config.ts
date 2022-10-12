@@ -10,23 +10,8 @@ import { defineNuxtConfig } from "nuxt"
       ],
       
 
-      // buildModules: [
-
-      //   [
-      //     '@pinia/nuxt',
-      //     {
-      //       autoImports: [
-      //         // automatically imports `defineStore`
-      //         'defineStore', // import { defineStore } from 'pinia'
-      //         // automatically imports `defineStore` as `definePiniaStore`
-      //         ['defineStore', 'definePiniaStore'], // import { defineStore as definePiniaStore } from 'pinia'
-      //       ],
-      //     },
-      //   ],
-
-      // ],
-
       // Plugins
+      // plugins: ["~/plugins/fontawesome.js"],
       modules: [
         // ...
         [
@@ -56,9 +41,18 @@ import { defineNuxtConfig } from "nuxt"
 
       // Head
       head: {
+        title: 'Dashboard Project',
+        meta: [
+          {
+            hid: 'Dashboard',
+            name: 'Dashboard',
+            content: 'Dashboard Project Made by @blazewtt'
+          }
+        ],
         link: [
 
-        ],
+        ]
+
       },
 
   })
