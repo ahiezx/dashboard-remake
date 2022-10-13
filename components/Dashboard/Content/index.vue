@@ -46,31 +46,29 @@
             "
             action="https://jsonplaceholder.typicode.com/todos/3" 
             ></DashboardContentComponentsToggle>
-
-            <!-- <DashboardContentSettings></DashboardContentSettings>
-            <DashboardContentSettings></DashboardContentSettings>
-            <DashboardContentSettings></DashboardContentSettings>
-            <DashboardContentSettings></DashboardContentSettings>
-            <DashboardContentSettings></DashboardContentSettings>
-            <DashboardContentSettings></DashboardContentSettings>
-            <DashboardContentSettings></DashboardContentSettings> -->
             
         </div>
     </div>
 
     <div v-else-if="contentPage == 'leaderboard'" class="align-top m-0 p-2 bg-innerdark innerContent">
+        <!-- <GeneralModal></GeneralModal> -->
         <div class="leaderboard_table">
           <table>
             <tr>
               <th class="lb_rank">Rank</th>
               <th class="lb_xp">Rating</th>
-              <th class="lb_username">Username</th>
+              <th class="lb_userIcon">Username</th>
+              <th class="lb_username"></th>
               <th class="lb_level">Games Won</th>
             </tr>
-              <tr v-for="item in 5">
-                <td class="lb_rank">{{item}}</td>
+              <tr v-for="(item,index) in 25">
+                <td class="lb_rank" :class="{'leaderboard_top': index == 0}"><span style="font-size:25px;">{{item}}</span> <i v-if="index == 0" class='fa fa-star text-xs text-yellow-300 ml-2' style="transform:translateY(-3.5px)"></i></td>
                 <td class="lb_xp">1000</td>
-                <td class="lb_username">Ahmad</td>
+                <td class="lb_userIcon"><img src="https://picsum.photos/500/500"></td>
+                <td class="lb_username align-middle">
+                <span class="align-middle my-auto">Ahmad</span>
+                <p class="text-gray-400 text-xs">ID10101</p>
+                </td>
                 <td class="lb_level">100</td>
               </tr>
           </table>
@@ -86,6 +84,13 @@
 </template>
 
 <style>
+
+.leaderboard_top {
+  height:120px;
+}
+.leaderboard_topIcon {
+
+}
 
 .innerContent {
   width:100% !important;
@@ -108,7 +113,8 @@
 
 .leaderboard_table {
   overflow-y: scroll;
-  height: 90vh;
+  /* overflow-x:hidden; */
+  height: 95vh;
   margin: 0;
 }
 
@@ -121,16 +127,21 @@
 .leaderboard_table table tr {
   font-family: 'Tajawal-Bold';
   border-bottom: 2px solid #222;
+  height: 50px;
+  transition: all 0.2s ease-in-out;
+
 }
 .leaderboard_table table tr:nth-child(even) {
-  background-color: rgba(0, 0, 0, 0.24);
+  background-color: rgba(86, 86, 86, 0.24);
 }
 .leaderboard_table table tr:nth-child(odd) {
-  background-color: rgba(0, 0, 0, 0.12);
+  background-color: rgba(125, 125, 125, 0.12);
 }
 .leaderboard_table table tr:hover {
   /* background-color: #ddd; */
-  background-color: rgba(0, 0, 0, 0.24);
+  transition: all 0.2s ease-in-out;
+  height: 90px;
+  background-color: rgba(255, 255, 255, 0.12);
 }
 .leaderboard_table table th {
   padding:12px;
@@ -140,7 +151,7 @@
 }
 
 .leaderboard_table table td {
-  padding:12px;
+  padding:16px;
   text-align: left;
   /* color: black; */
   color: white;
@@ -151,6 +162,11 @@
 }
 .leaderboard_table .lb_username {
   width: 50%;
+}
+
+.leaderboard_table .lb_userIcon{
+  width: 4%;
+  padding:0;
 }
 
 .form-switch i {
