@@ -29,6 +29,18 @@
   background: #555;
 }
 
+.player_controls {
+    /* overflow-y: scroll; */
+    position: absolute;
+    bottom:0px;
+    background-color: rgb(31, 31, 31);
+    width:100%;
+    
+    /* border:1px solid white; */
+    box-shadow: 0px 0px 18px 7px rgba(2, 2, 2, 0.082);
+    border-top:3px solid #1CB25B;
+}
+
 </style>
 
 <script>

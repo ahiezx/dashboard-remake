@@ -217,7 +217,7 @@
 }
 .leaderboard_top_object {
   border: #1CB25B 2px solid;
-  box-shadow: 0 -19px 60px 0px #1CB25B;
+  box-shadow: 0 -10px 22px 0px #5ff7abf5;
 }
 .leaderboard_top_object.lb_userIcon {
   width: 100px;

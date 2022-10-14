@@ -34,14 +34,6 @@
     box-shadow: 0px 0px 18px 7px rgba(0, 0, 0, 0.5);
 }
 
-.player_controls {
-    overflow-y: scroll;
-    position: absolute;
-    bottom:0px;
-    background-color: #00AF54;
-    width:100%;
-}
-
 .outer {
     display:table;
     width:100%;
@@ -87,7 +79,15 @@
 }
 
 @media only screen and (max-width: 768px) {
-    .dashboard_content {}
+    .dashboard_content {
+        
+    }
+    .player_controls {
+        position: absolute;
+        bottom:0px;
+        background-color: rgb(31, 31, 31);
+        width:100%;
+    }
 }
 </style>
 

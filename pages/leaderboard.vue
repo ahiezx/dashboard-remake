@@ -20,7 +20,7 @@
 
 .body, html {
     background-color: rgb(56, 56, 56);
-    /* overflow-y: hidden; */
+    
 }
 
 .pack {
@@ -32,12 +32,6 @@
     box-shadow: 0px 0px 18px 7px rgba(0, 0, 0, 0.5);
 }
 
-.player_controls {
-    position: absolute;
-    bottom:0px;
-    background-color: #00AF54;
-    width:100%;
-}
 
 .outer {
     display:table;
