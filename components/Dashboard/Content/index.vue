@@ -54,17 +54,17 @@
         <!-- <GeneralModal></GeneralModal> -->
         <div class="leaderboard_table">
           <table>
-            <tr>
+            <tr class="lb_head">
               <th class="lb_rank">Rank</th>
               <th class="lb_xp">Rating</th>
-              <th class="lb_userIcon">Username</th>
+              <th class="lb_userIcon"><span>Username</span></th>
               <th class="lb_username"></th>
               <th class="lb_level">Games Won</th>
             </tr>
-              <tr v-for="(item,index) in 25">
+              <tr v-for="(item,index) in 25" :class="{'leaderboard_top_object': index == 0}">
                 <td class="lb_rank" :class="{'leaderboard_top': index == 0}"><span style="font-size:25px;">{{item}}</span> <i v-if="index == 0" class='fa fa-star text-xs text-yellow-300 ml-2' style="transform:translateY(-3.5px)"></i></td>
                 <td class="lb_xp">1000</td>
-                <td class="lb_userIcon"><img src="https://picsum.photos/500/500"></td>
+                <td class="lb_userIcon"><img src="https://picsum.photos/500/500" :class="{'leaderboard_topOneImage': index == 0}"></td>
                 <td class="lb_username align-middle">
                 <span class="align-middle my-auto">Ahmad</span>
                 <p class="text-gray-400 text-xs">ID10101</p>
@@ -88,9 +88,8 @@
 .leaderboard_top {
   height:120px;
 }
-.leaderboard_topIcon {
 
-}
+
 
 .innerContent {
   width:100% !important;
@@ -126,9 +125,9 @@
 
 .leaderboard_table table tr {
   font-family: 'Tajawal-Bold';
-  border-bottom: 2px solid #222;
+  border-bottom: 2px solid #111;
   height: 50px;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s ease-in;
 
 }
 .leaderboard_table table tr:nth-child(even) {
@@ -137,9 +136,9 @@
 .leaderboard_table table tr:nth-child(odd) {
   background-color: rgba(125, 125, 125, 0.12);
 }
-.leaderboard_table table tr:hover {
+.leaderboard_table table tr:hover:not(.lb_head) {
   /* background-color: #ddd; */
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s ease;
   height: 90px;
   background-color: rgba(255, 255, 255, 0.12);
 }
@@ -157,6 +156,7 @@
   color: white;
 }
 
+
 .leaderboard_table .lb_rank {
   width: 10%;
 }
@@ -164,10 +164,71 @@
   width: 50%;
 }
 
-.leaderboard_table .lb_userIcon{
-  width: 4%;
+.leaderboard_table .lb_userIcon {
   padding:0;
 }
+
+.lb_userIcon span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+  margin: 0;
+  padding-left:13px;
+}
+
+.leaderboard_topIcon img{
+  /* height:120px; */
+  width:180px !important;
+  margin:0 auto;
+  height: 50%;
+}
+
+.leaderboard_table .lb_userIcon img{
+  /* width: 4%; */
+  width: 50px;
+  /* align middle */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  padding:0;
+}
+
+.lb_head th{
+  transition: all 0.3s ease;
+  background-color: #3F3F42;
+  font-size: 1.1rem;
+}
+.lb_head th:hover:not(.lb_username):not(.lb_level){
+  transition: all 0.3s ease;
+  /* height:auto; */
+  background-color: rgba(237, 237, 237,0.2);
+}
+.leaderboard_topOneImage {
+  width:70px !important;
+  /* border: #1CB25B 3px solid; */
+  /* box-shadow: 0 0px 18px 3px #1CB25B; */
+  /* height:40px; */
+  /* border-radius: 50%;
+  margin:0 auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; */
+}
+.leaderboard_top_object {
+  border: #1CB25B 2px solid;
+  box-shadow: 0 -19px 60px 0px #1CB25B;
+}
+.leaderboard_top_object.lb_userIcon {
+  width: 100px;
+  border-radius: 0%;
+}
+
+.leaderboard_top_object.lb_userIcon img{
+ min-width:120px !important;
+ border-radius: 0% !important;
+}
+
 
 .settingArea {
   height: 45vh;
