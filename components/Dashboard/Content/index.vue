@@ -26,7 +26,7 @@
           </div>
       </div>
 
-        <div class="p-5 space-y-5 mt-5" style="overflow-y: scroll;height:48vh;">
+        <div class="p-5 space-y-5 mt-5 settingArea" style="overflow-y: scroll;">
         
             <DashboardContentComponentsToggle title="Notifications" description=
             "
@@ -169,6 +169,11 @@
   padding:0;
 }
 
+.settingArea {
+  height: 45vh;
+  overflow-y: scroll;
+}
+
 .form-switch i {
   @apply bg-gray-600;
   position: relative;
@@ -254,10 +259,22 @@
   }
 }
 
-@media only screen and (max-width: 558px) {
+@media only screen and (max-width: 568px) {
 
   .dashboard_content {
-    width: 100% !important;
+    
+    /* width:500px !important; */
+
+  }
+
+  .settingArea {
+    /* width:50%; */
+    height: 71.8vh;
+  }
+
+  .outer, .pack, .sidebar, .innerContent, .dashboard_content {
+    /* height:113.4vh; */
+    height:max-content;
   }
 
 }

@@ -19,21 +19,25 @@
       <h4
       class="text-gray-400 text-sm pt-1 font-extrabold uppercase tracking-wider"
       >Siden Community</h4>
-      <NuxtLink class="btn-generic" to="/"><i class="fad fa-compass"></i><span>Find Servers</span></NuxtLink>
+      <!-- <NuxtLink class="btn-generic" to="/"><i class="fad fa-compass"></i><span>Find Servers</span></NuxtLink> -->
       <NuxtLink class="btn-generic" to="/leaderboard"><i class="fad fa-trophy-alt"></i><span style="position:relative;right:3px;">Leaderboard</span></NuxtLink>
       <!-- <hr> -->
       <h4
       class="text-gray-400 text-sm pt-3 font-extrabold uppercase tracking-wider"
       >User Overview</h4>
       <NuxtLink class="btn-generic" to="/account"><i class="fas fa-user"></i><span>Account</span></NuxtLink>
-      <NuxtLink class="btn-generic" to="/"><i class="fad fa-terminal"></i><span style="position:relative;right:4px;">Commands</span></NuxtLink>
+      <!-- <NuxtLink class="btn-generic" to="/"><i class="fad fa-terminal"></i><span style="position:relative;right:4px;">Commands</span></NuxtLink> -->
 
       <h5 class="text-gray-600 text-sm pt-1 font-extrabold uppercase">
          Other
       </h5>
 
-      <!-- <NuxtLink class="btn-generic" to="/">Support</NuxtLink> -->
-      <!-- <NuxtLink class="btn-generic btn-generic-red" to="/"> Log out</NuxtLink> -->
+      <NuxtLink class="btn-generic bigResOnly" to="/">Support</NuxtLink>
+      <NuxtLink class="btn-generic btn-generic-red bigResOnly" to="/"> Log out</NuxtLink>
+
+      <NuxtLink class="btn-generic smallResOnly" to="/"><i class="fas fa-info"></i></NuxtLink>
+      <NuxtLink class="btn-generic btn-generic-red smallResOnly" to="/"><i class="fas fa-sign-out"></i></NuxtLink>
+
    </div>
 </div>
 
@@ -107,7 +111,7 @@
    }
 
    .btn-generic-red {
-      background-color: #ca4343;
+      background-color: #ca4343 !important;
    }
 
    .btn-generic-red:hover {

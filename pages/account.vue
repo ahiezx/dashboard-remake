@@ -28,6 +28,7 @@
     /* display: flex; */
     /* flex-direction: row; */
     /* min-height: 100%; */
+    height: 100vh !important;
     transition: all 0.5s ease;
     border-radius: 3px;
     box-shadow: 0px 0px 18px 7px rgba(0, 0, 0, 0.5);
@@ -80,7 +81,7 @@
 .dashboard_content {
     display:table-cell;
     width:80%;
-    height: 95vh;
+    height: 100vh;
     
     background-color: rgb(31, 31, 31);
 }
