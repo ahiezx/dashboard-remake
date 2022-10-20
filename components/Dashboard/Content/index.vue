@@ -32,11 +32,13 @@
             "
             Allow Siden to send you notifications when you receive a message or a friend request.
             "
+            message="Are you sure you want to toggle notifications?"
             action="https://jsonplaceholder.typicode.com/todos/1" 
             ></DashboardContentComponentsToggle>
             <DashboardContentComponentsToggle title="Privacy" description="
             Allow Siden to use your data to improve your experience. Disabling this will only disable the use of your data for analytics and marketing purposes. Your data will still be used for authentication and security purposes.
             "
+            message="Are you sure you want to toggle privacy?"
             action="https://jsonplaceholder.typicode.com/todos/2" 
             ></DashboardContentComponentsToggle>
             <DashboardContentComponentsToggle title="
@@ -44,6 +46,7 @@
             " description="
             Enable dark mode
             "
+            message="Are you sure you want to toggle dark mode?"
             action="https://jsonplaceholder.typicode.com/todos/3" 
             ></DashboardContentComponentsToggle>
             
