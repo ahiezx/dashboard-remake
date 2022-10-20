@@ -24,6 +24,25 @@
             <p class="my-auto mx-auto align-middle block">Ahmad#4444</p>
 
           </div>
+
+          <div class="container mx-auto">
+
+            <h3 class="text-3xl mt-8 font-extrabold text-white userStats mb-2">Your stats</h3>
+            <div class="flex justify text-white p-3 bg-neutral-900 space-x-2 align-middle">
+              <i class="mt-1 fas fa-user-friends text-1xl"></i>
+              <p class="text-1xl">Friends: 0</p>
+            </div>
+            <div class="flex justify text-white p-3 bg-neutral-900 space-x-2 align-middle">
+              <i class="mt-1 fas fa-coins text-1xl"></i>
+              <p class="text-1xl">Balance: 0</p>
+            </div>
+            <div class="flex justify text-white p-3 bg-neutral-900 space-x-2 align-middle shadow-md">
+              <i class="mt-1 fab fa-discord text-1xl"></i>
+              <p class="text-1xl">Servers: 0</p>
+            </div>              
+
+          </div>          
+
       </div>
 
         <div class="p-5 space-y-5 mt-5 settingArea" style="overflow-y: scroll;">
@@ -61,7 +80,7 @@
               <th class="lb_username"></th>
               <th class="lb_level">Games Won</th>
             </tr>
-              <tr v-for="(item,index) in 25" :class="{'leaderboard_top_object': index == 0}">
+              <tr v-for="(item,index) in 25" :class="{'leaderboard_top_object': index==0,'leaderboard_second_object': index==1}">
                 <td class="lb_rank" :class="{'leaderboard_top': index == 0}"><span style="font-size:25px;">{{item}}</span> <i v-if="index == 0" class='fa fa-star text-xs text-yellow-300 ml-2' style="transform:translateY(-3.5px)"></i></td>
                 <td class="lb_xp">1000</td>
                 <td class="lb_userIcon"><img src="https://picsum.photos/500/500" :class="{'leaderboard_topOneImage': index == 0}"></td>
@@ -84,6 +103,13 @@
 </template>
 
 <style>
+
+.userStats {
+    @apply pb-3;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #4b5157;
+}
 
 .leaderboard_top {
   height:120px;
@@ -217,16 +243,22 @@
 }
 .leaderboard_top_object {
   border: #1CB25B 2px solid;
-  box-shadow: 0 -10px 22px 0px #5ff7abf5;
+  box-shadow: 0 0px 18px 3px #1CB25B;
 }
 .leaderboard_top_object.lb_userIcon {
   width: 100px;
   border-radius: 0%;
+  border:none;
 }
 
 .leaderboard_top_object.lb_userIcon img{
  min-width:120px !important;
  border-radius: 0% !important;
+}
+
+.leaderboard_second_object {
+  /* border: #1CB25B 2px solid; */
+  /* background-color: rgba(252, 15, 15, 0.877) !important; */
 }
 
 
