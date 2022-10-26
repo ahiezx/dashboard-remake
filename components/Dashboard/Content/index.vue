@@ -67,9 +67,10 @@
             "
             message="Are you sure you want to toggle dark mode?"
             action="https://jsonplaceholder.typicode.com/todos/3" 
-            ></DashboardContentComponentsToggle>
-            
+            ></DashboardContentComponentsToggle>     
+
         </div>
+        
     </div>
 
     <div v-else-if="contentPage == 'leaderboard'" class="align-top m-0 p-2 bg-innerdark innerContent">
@@ -97,15 +98,47 @@
         </div>
     </div>
 
-    <div class="align-top m-0 p-2 bg-innerdark" v-else>
+    <div v-else-if="contentPage == 'server'" class="align-top m-0 p-2 bg-innerdark innerContent">
 
-        <h1 class="p-5 bg-white rounded">nothing here to show</h1>
+      <div class="container mx-auto p-5">
+        
+        <header class="flex text-white items-center justify-between">
+          <div class="flex items-center space-x-4">
+            <img :src="currentServer.img" class="server_pic">
+            <h2 class="text-2xl">
+
+              {{currentServer.name}}
+
+            </h2>
+          </div>
+
+          <p>
+
+            {{currentServer.owner}}
+
+          </p>
+        </header>
+
+        <hr class="
+        border-1
+        border-gray-500
+        w-full
+        my-5
+        ">
+        
+      </div>
 
     </div>
 
 </template>
 
 <style>
+
+.server_pic {
+  width:100px;
+  height:100px;
+  border-radius:50%;
+}
 
 .userStats {
     @apply pb-3;
@@ -116,6 +149,10 @@
 
 .leaderboard_top {
   height:120px;
+}
+
+.settingArea {
+  height:42vh;
 }
 
 
@@ -232,6 +269,7 @@
   transition: all 0.3s ease;
   /* height:auto; */
   background-color: rgba(237, 237, 237,0.2);
+  cursor: crosshair;
 }
 .leaderboard_topOneImage {
   width:70px !important;
@@ -265,9 +303,11 @@
 }
 
 
-.settingArea {
-  height: 45vh;
+.leaderboard_table {
   overflow-y: scroll;
+  /* overflow-x:hidden; */
+  height: 95vh;
+  margin: 0;
 }
 
 .form-switch i {
@@ -376,6 +416,20 @@
 }
 
 </style>
+
+<script setup>
+  
+  // import user state from the store using pinia
+  import { userState } from '~/stores/user'
+
+  const user = userState()
+
+  const route = useRoute();
+
+  const currentServer = user.getServerById(route.params.id)
+
+
+</script>
 
 <script>
 
