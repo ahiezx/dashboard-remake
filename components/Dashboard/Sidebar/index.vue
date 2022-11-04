@@ -30,7 +30,7 @@
 
     .sidebar_controls {
         display:table-cell;
-        min-width: 248px;
+        min-width: 265px;
         background-color: #1e1e20;
     }
 

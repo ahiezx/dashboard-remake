@@ -1,6 +1,6 @@
 <template>
     
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css">
     <div class="outer">
       <div class="pack" :class="{'outer_margin': outerMargin.margin}">    
         <DashboardSidebar class="dashboard_sidebar"></DashboardSidebar>  

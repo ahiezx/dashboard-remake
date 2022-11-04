@@ -112,11 +112,6 @@
             </h2>
           </div>
 
-          <p>
-
-            {{currentServer.owner}}
-
-          </p>
         </header>
 
         <hr class="
@@ -421,12 +416,17 @@
   
   // import user state from the store using pinia
   import { userState } from '~/stores/user'
+  import { serverState } from '~/stores/server'
 
   const user = userState()
 
+  const server = serverState()
+
   const route = useRoute();
 
-  const currentServer = user.getServerById(route.params.id)
+  const currentServer = server.getServerById(route.params.id)
+
+  console.log(currentServer)
 
 
 </script>

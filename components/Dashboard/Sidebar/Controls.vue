@@ -1,43 +1,64 @@
 <template>
 
-<div class="bg-black md:text-xs side_controls" aria-label="Sidebar-1">
-   <DashboardSidebarComponentsTitle title="Overview"></DashboardSidebarComponentsTitle>
-   <div class="p-3 space-y-1.5 space-x-1 xffg">
-      <div class="mt-1 mb-3">
+<div v-if="route.name != 'server-id'">
+   <div class="md:text-xs sidebar_controls xffg" aria-label="Sidebar">
+      <DashboardSidebarComponentsTitle title="Overview"></DashboardSidebarComponentsTitle>
+      <div class="container mx-auto space-y-1.5 p-3">
+         <div class="mt-1 mb-3">
 
-         <form class="flex items-center searchbar">   
-            <label for="simple-search" class="sr-only">Search</label>
-            <div class="relative w-full">
-               <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                     <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+            <form class="flex items-center searchbar">   
+               <label for="search" class="sr-only">Search</label>
+               <div class="relative w-full">
+                  <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                        <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+                  </div>
+                  <input type="text" id="search" class="bg-innerdark text-gray-900 text-xs rounded-sm focus:ring-blue-500 block w-full pl-10 p-2.5  dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search" required>
                </div>
-               <input type="text" id="simple-search" class="bg-innerdark text-gray-900 text-xs rounded-sm focus:ring-blue-500 block w-full pl-10 p-2.5  dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search" required>
-            </div>
-         </form>
+            </form>
+
+         </div>    
+
+         <h4
+         class="text-gray-400 text-sm pt-1 font-extrabold uppercase tracking-wider"
+         >Community</h4>         
+         <NuxtLink class="btn-generic" to="/leaderboard"><i class="fad fa-trophy-alt"></i><span>Leaderboard</span></NuxtLink>
+         <h4
+         class="text-gray-400 text-sm pt-1 font-extrabold uppercase tracking-wider"
+         >User Overview</h4>         
+         <NuxtLink class="btn-generic" to="/account"><i class="fad fa-user-cog"></i><span>Account</span></NuxtLink>         
+
+         <h4
+         class="text-gray-400 text-sm pt-3 font-extrabold uppercase tracking-wider"
+         >Miscellaneous</h4>    
+         <NuxtLink class="btn-generic bigResOnly" to="/"><i class="fad fa-info-square"></i>Support</NuxtLink>
+         <NuxtLink class="btn-generic btn-generic-red bigResOnly" to="/"> Log out</NuxtLink>
+
+         <NuxtLink class="btn-generic smallResOnly" to="/"><i class="fas fa-info"></i></NuxtLink>
+         <NuxtLink class="btn-generic btn-generic-red smallResOnly" to="/"><i class="fas fa-sign-out"></i></NuxtLink>
+
 
       </div>
-      <h4
-      class="text-gray-400 text-sm pt-1 font-extrabold uppercase tracking-wider"
-      >Siden Community</h4>
-      <!-- <NuxtLink class="btn-generic" to="/"><i class="fad fa-compass"></i><span>Find Servers</span></NuxtLink> -->
-      <NuxtLink class="btn-generic" to="/leaderboard"><i class="fad fa-trophy-alt"></i><span style="position:relative;right:3px;">Leaderboard</span></NuxtLink>
-      <!-- <hr> -->
-      <h4
-      class="text-gray-400 text-sm pt-3 font-extrabold uppercase tracking-wider"
-      >User Overview</h4>
-      <NuxtLink class="btn-generic" to="/account"><i class="fas fa-user"></i><span>Account</span></NuxtLink>
-      <!-- <NuxtLink class="btn-generic" to="/"><i class="fad fa-terminal"></i><span style="position:relative;right:4px;">Commands</span></NuxtLink> -->
+   </div>
+</div>
 
-      <h5 class="text-gray-600 text-sm pt-1 font-extrabold uppercase">
-         Other
-      </h5>
-
-      <NuxtLink class="btn-generic bigResOnly" to="/">Support</NuxtLink>
-      <NuxtLink class="btn-generic btn-generic-red bigResOnly" to="/"> Log out</NuxtLink>
-
-      <NuxtLink class="btn-generic smallResOnly" to="/"><i class="fas fa-info"></i></NuxtLink>
-      <NuxtLink class="btn-generic btn-generic-red smallResOnly" to="/"><i class="fas fa-sign-out"></i></NuxtLink>
-
+<div v-else>
+   <div class="md:text-xs sidebar_controls" aria-label="Sidebar-Server">
+      <DashboardSidebarComponentsTitle :title="route.params.id"></DashboardSidebarComponentsTitle>
+      <div class="container mx-auto space-y-1.5 p-3">
+         <h4
+         class="text-gray-400 text-sm pt-1 font-extrabold uppercase tracking-wider"
+         >Server Information</h4>         
+         <NuxtLink class="btn-generic" to="/account"><i class="fad fa-info-circle"></i><span>Server Status</span></NuxtLink>
+         <NuxtLink class="btn-generic" to="/account"><i class="fad fa-users"></i><span>Members</span></NuxtLink>
+         <h4
+         class="text-gray-400 text-sm pt-1 font-extrabold uppercase tracking-wider"
+         >Moderation</h4>         
+         <NuxtLink class="btn-generic" to="/account"><i class="fad fa-user-shield"></i><span>Administration</span></NuxtLink>         
+         <NuxtLink class="btn-generic" to="/account"><i class="fad fa-sensor-alert"></i><span>Chat Moderation</span></NuxtLink>
+         <NuxtLink class="btn-generic" to="/account"><i class="fad fa-comments-alt"></i><span>Chat & Voice Management</span></NuxtLink>
+         <!-- <NuxtLink class="btn-generic" to="/account"><i class="fad fa-terminal"></i><span>Commands</span></NuxtLink> -->
+         <!-- <NuxtLink class="btn-generic" to="/account"><i class="fad fa-microphone"></i><span>Voice Management</span></NuxtLink> -->
+      </div>
    </div>
 </div>
 
@@ -84,6 +105,9 @@
       /* width: 90%; */
       font-size:16px;
       font-weight: 500;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
       /* font-size: 0.855rem;  */
       color: #ececec;
       font-family: 'Tajawal', sans-serif !important;
@@ -135,6 +159,8 @@
 
 </style>
 
-<script>
+<script setup>
+
+   const route = useRoute();
 
 </script>
