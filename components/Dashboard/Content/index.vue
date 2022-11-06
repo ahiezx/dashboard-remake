@@ -114,13 +114,18 @@
 
         </header>
 
-        <hr class="
-        border-1
-        border-gray-500
-        w-full
-        my-5
-        ">
-        
+        <div
+          class="flex flex-col md:flex-row md:space-x-4 mt-4"
+        >
+          <div class="flex-1">
+            <div class="bg-neutral-900 p-4 rounded-md">
+              <h3 class="text-xl font-bold">Server Info</h3>
+              <p class="text-gray-400 mt-2">
+                {{currentServer.name}}
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
 
     </div>

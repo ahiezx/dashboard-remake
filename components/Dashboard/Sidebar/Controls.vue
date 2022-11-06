@@ -42,20 +42,40 @@
 </div>
 
 <div v-else>
-   <div class="md:text-xs sidebar_controls" aria-label="Sidebar-Server">
+   <div class="md:text-xs sidebar_controls xffg" aria-label="Sidebar-Server">
       <DashboardSidebarComponentsTitle :title="route.params.id"></DashboardSidebarComponentsTitle>
       <div class="container mx-auto space-y-1.5 p-3">
          <h4
          class="text-gray-400 text-sm pt-1 font-extrabold uppercase tracking-wider"
          >Server Information</h4>         
-         <NuxtLink class="btn-generic" to="/account"><i class="fad fa-info-circle"></i><span>Server Status</span></NuxtLink>
+         <NuxtLink class="btn-generic" :to="route.path"><i class="fad fa-info-circle"></i><span>Server Status</span></NuxtLink>
          <NuxtLink class="btn-generic" to="/account"><i class="fad fa-users"></i><span>Members</span></NuxtLink>
          <h4
          class="text-gray-400 text-sm pt-1 font-extrabold uppercase tracking-wider"
          >Moderation</h4>         
          <NuxtLink class="btn-generic" to="/account"><i class="fad fa-user-shield"></i><span>Administration</span></NuxtLink>         
-         <NuxtLink class="btn-generic" to="/account"><i class="fad fa-sensor-alert"></i><span>Chat Moderation</span></NuxtLink>
          <NuxtLink class="btn-generic" to="/account"><i class="fad fa-comments-alt"></i><span>Chat & Voice Management</span></NuxtLink>
+         <NuxtLink class="btn-generic" to="/account"><i class="fad fa-sensor-alert"></i><span>Server Management</span></NuxtLink>
+         <NuxtLink class="btn-generic" to="/account"><i class="fas fa-trophy-alt"></i><span>Rank System</span></NuxtLink>
+         <!-- <NuxtLink class="btn-generic" to="/account"><i class="fad fa-cog"></i><span>Bot Settings</span></NuxtLink> -->
+         <NuxtLink class="btn-generic" to="/account"><i class="fad fa-shield"></i><span>Roles</span></NuxtLink>
+         <h4
+         class="text-gray-400 text-sm pt-1 font-extrabold uppercase tracking-wider"
+         >Member Management</h4>                   
+         <NuxtLink class="btn-generic" to="/account"><i class="fad fa-user-edit"></i><span>Edit Member</span></NuxtLink>
+         <NuxtLink class="btn-generic" to="/account"><i class="fad fa-user-times"></i><span>Ban Member</span></NuxtLink>
+         <NuxtLink class="btn-generic" to="/account"><i class="fad fa-user-slash"></i><span>Kick Member</span></NuxtLink>
+         <NuxtLink class="btn-generic" to="/account"><i class="fad fa-user-lock"></i><span>Lock Member</span></NuxtLink>         
+         <h4
+         class="text-gray-400 text-sm pt-1 font-extrabold uppercase tracking-wider"
+         >Actions</h4>                  
+         <NuxtLink class="btn-generic" to="/account"><i class="fad fa-user-plus"></i><span>Invite</span></NuxtLink>
+         <NuxtLink class="btn-generic" to="/account"><i class="fas fa-envelope"></i><span>Send message</span></NuxtLink>
+         <NuxtLink class="btn-generic" to="/account"><i class="fas fa-volume"></i><span>Sound Player</span></NuxtLink>
+         <nuxtlink class="btn-generic btn-generic-red" to="/"><i class="fad fa-sign-out"></i><span>Leave</span></nuxtlink>
+         
+
+
          <!-- <NuxtLink class="btn-generic" to="/account"><i class="fad fa-terminal"></i><span>Commands</span></NuxtLink> -->
          <!-- <NuxtLink class="btn-generic" to="/account"><i class="fad fa-microphone"></i><span>Voice Management</span></NuxtLink> -->
       </div>
@@ -139,7 +159,15 @@
    }
 
    .btn-generic-red:hover {
-      background-color: #cf2525;
+      background-color: #d13232 !important;
+   }
+
+   .btn-generic-green {
+      background-color: #1CB25B !important;
+   }
+
+   .btn-generic-green:hover {
+      background-color: #1d662a !important;
    }
 
    .generic-icon {
