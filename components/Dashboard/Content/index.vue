@@ -27,47 +27,73 @@
 
           <div class="container mx-auto">
 
-            <h3 class="text-3xl mt-8 font-extrabold text-white userStats mb-2">Your stats</h3>
-            <div class="flex justify text-white p-3 bg-neutral-900 space-x-2 align-middle">
-              <i class="mt-1 fas fa-user-friends text-1xl"></i>
-              <p class="text-1xl">Friends: 0</p>
-            </div>
-            <div class="flex justify text-white p-3 bg-neutral-900 space-x-2 align-middle">
-              <i class="mt-1 fas fa-coins text-1xl"></i>
-              <p class="text-1xl">Balance: 0</p>
-            </div>
-            <div class="flex justify text-white p-3 bg-neutral-900 space-x-2 align-middle shadow-md">
-              <i class="mt-1 fab fa-discord text-1xl"></i>
-              <p class="text-1xl">Servers: 0</p>
-            </div>              
+              <h3 class="text-3xl mt-8 font-extrabold text-white userStats">Your stats</h3>
 
-          </div>          
+              <div class="flex justify-between space-x-1 mt-5">
+                
+                <div class=" p-5 text-white rounded-xs text-center shadow-lg stat">
+                  <i class="text-xl fad fa-users"></i>
+                  <p class="font-light"><strong>Friends:</strong> {{15}}</p>
+                </div>
+                <div class=" p-5 text-white rounded-xs text-center shadow-lg stat">
+                  <i class="text-xl fad fa-coins"></i>
+                  <p class="font-light"><strong>Balance:</strong> {{192599}}</p>
+                </div>
+                <div class=" p-5 text-white rounded-xs text-center shadow-lg stat">
+                  <i class="text-xl fad fa-sensor"></i>
+                  <p class="font-light"><strong>Servers:</strong> {{4}}</p>
+                </div>
+
+              </div>
+            
+          </div>         
 
       </div>
-
-        <div class="p-5 space-y-5 mt-5 settingArea" style="overflow-y: scroll;">
+      
+        <div class="p-3 container mx-auto settingArea" style="overflow-y: scroll;">
+          
+          <h3 class="text-3xl mt-0 space-y-0 font-extrabold text-white userStats mb-5">Settings</h3>
         
-            <DashboardContentComponentsToggle title="Notifications" description=
-            "
-            Allow Siden to send you notifications when you receive a message or a friend request.
-            "
-            message="Are you sure you want to toggle notifications?"
-            action="https://jsonplaceholder.typicode.com/todos/1" 
-            ></DashboardContentComponentsToggle>
-            <DashboardContentComponentsToggle title="Privacy" description="
-            Allow Siden to use your data to improve your experience. Disabling this will only disable the use of your data for analytics and marketing purposes. Your data will still be used for authentication and security purposes.
-            "
-            message="Are you sure you want to toggle privacy?"
-            action="https://jsonplaceholder.typicode.com/todos/2" 
-            ></DashboardContentComponentsToggle>
-            <DashboardContentComponentsToggle title="
-            Dark Mode
-            " description="
-            Enable dark mode
-            "
-            message="Are you sure you want to toggle dark mode?"
-            action="https://jsonplaceholder.typicode.com/todos/3" 
-            ></DashboardContentComponentsToggle>     
+            <div class="space-y-4">
+              <div class="select-language flex justify-between">
+              <div>
+                <p class="text-white font-extrabold text-2xl">Language</p>
+                <p class="text-sm font-regular text-gray-400 mb-2 mt-2">
+                  Select your language
+                </p>
+              </div>
+              <select class="rounded-md bg-transparent text-white font-light">
+                <option value="English">English</option>
+                <option value="Arabic">Arabic</option>
+                <option value="French">French</option>
+                <option value="German">German</option>
+                <option value="Spanish">Spanish</option>
+              </select>
+
+              </div>
+
+              <DashboardContentComponentsToggle title="Notifications" description=
+              "
+              Allow Siden to send you notifications when you receive a message or a friend request.
+              "
+              message="Are you sure you want to toggle notifications?"
+              action="https://jsonplaceholder.typicode.com/todos/1" 
+              ></DashboardContentComponentsToggle>
+              <DashboardContentComponentsToggle title="Privacy" description="
+              Allow Siden to use your data to improve your experience. Disabling this will only disable the use of your data for analytics and marketing purposes. Your data will still be used for authentication and security purposes.
+              "
+              message="Are you sure you want to toggle privacy?"
+              action="https://jsonplaceholder.typicode.com/todos/2" 
+              ></DashboardContentComponentsToggle>
+              <DashboardContentComponentsToggle title="
+              Dark Mode
+              " description="
+              Enable dark mode
+              "
+              message="Are you sure you want to toggle dark mode?"
+              action="https://jsonplaceholder.typicode.com/todos/3" 
+              ></DashboardContentComponentsToggle>     
+            </div>
 
         </div>
         
@@ -126,6 +152,49 @@
             </div>
           </div>
         </div>
+
+        <div class="server-charts grid grid-cols-2 space-x-5">
+
+          <div class=" 
+          bg-neutral-900 p-4 rounded-md mt-4
+          ">
+
+            <Bar
+            
+              :chart-options="chartOptions"
+              :chart-data="chartData"
+              :chart-id="chartId"
+              :dataset-id-key="datasetIdKey"
+              :plugins="plugins"
+              :css-classes="cssClasses"
+              :styles="styles"
+              :width="700"
+              :height="400"
+            />
+            
+          </div>
+
+          <div class=" 
+          bg-neutral-900 p-4 rounded-md mt-4
+          ">
+
+            <Bar
+            
+              :chart-options="chartOptions"
+              :chart-data="chartData"
+              :chart-id="chartId"
+              :dataset-id-key="datasetIdKey"
+              :plugins="plugins"
+              :css-classes="cssClasses"
+              :styles="styles"
+              :width="700"
+              :height="400"
+            />
+            
+          </div>
+
+        </div>
+
       </div>
 
     </div>
@@ -141,10 +210,11 @@
 }
 
 .userStats {
-    @apply pb-3;
+    @apply p-3 pl-0;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #4b5157;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+    /* box-shadow: 25  px 25px 25px 25px rgba(0, 0, 0, 0.5); */
 }
 
 .leaderboard_top {
@@ -155,7 +225,13 @@
   height:42vh;
 }
 
-
+.stat {
+  width:33%;
+  background-color: rgba(83, 51, 228, 0.548);
+  border-bottom:2px solid #ddd;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
 
 .innerContent {
   width:100% !important;
@@ -437,11 +513,58 @@
 </script>
 
 <script>
+import { Bar } from 'vue-chartjs'
+import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
+
+ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
 export default {
-
-    props:['contentPage'],
-
+  name: 'BarChart',
+  components: { Bar },
+  props: {
+    contentPage: {
+      type: String,
+      default: ''
+    },
+    chartId: {
+      type: String,
+      default: 'bar-chart'
+    },
+    datasetIdKey: {
+      type: String,
+      default: 'label'
+    },
+    width: {
+      type: Number,
+      default: 50
+    },
+    height: {
+      type: Number,
+      default: 50
+    },
+    cssClasses: {
+      default: '',
+      type: String
+    },
+    styles: {
+      type: Object,
+      default: () => {}
+    },
+    plugins: {
+      type: Object,
+      default: () => {}
+    }
+  },
+  data() {
+    return {
+      chartData: {
+        labels: [ 'January', 'February', 'March' ],
+        datasets: [ { data: [40, 20, 12] } ]
+      },
+      chartOptions: {
+        responsive: true
+      }
+    }
+  }
 }
-
 </script>
