@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.8",
-    "nuxt": "3.0.0-rc.9",
+    "nuxt": "^3.0.0-rc.12",
     "postcss": "^8.4.16",
     "postcss-nesting": "^10.2.0",
     "tailwindcss": "^3.1.8"
@@ -19,6 +19,8 @@
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/vue-fontawesome": "^3.0.1",
     "@pinia/nuxt": "^0.4.2",
-    "pinia": "^2.0.22"
+    "chart.js": "^3.9.1",
+    "pinia": "^2.0.22",
+    "vue-chartjs": "^4.1.2"
   }
 }

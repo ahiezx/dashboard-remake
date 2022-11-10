@@ -30,7 +30,7 @@
 
     .sidebar_controls {
         display:table-cell;
-        min-width: 248px;
+        min-width: 265px;
         background-color: #1e1e20;
     }
 
@@ -58,6 +58,10 @@
         transition: 0.3s;
     }
 
+    .smallResOnly {
+        display: none;
+    }
+
     @media only screen and (max-width: 768px) {
         .sidebar {
             height: 100%;
@@ -73,9 +77,12 @@
         
     }
 
-    @media only screen and (max-width: 558px) {
+    @media only screen and (max-width: 568px) {
         .sidebar {
             height: 100%;
+        }
+        .btn-generic-red {
+            border-radius: 0px;
         }
         .sidebar_servers {
             display: none;
@@ -92,7 +99,7 @@
             padding:0px;
             background-color: transparent;
         }
-        .sidebar_controls .sidebar_title {
+        .sidebar_controls .sidebar_title p{
             display: none;
         }
         .sidebar_controls .searchbar {
@@ -131,6 +138,14 @@
         }
         .xffg .router-link-active:hover {
             background-color: #5333E4;
+        }
+
+        .bigResOnly {
+            display: none;
+        }
+        
+        .smallResOnly {
+            display: block;
         }
 
         

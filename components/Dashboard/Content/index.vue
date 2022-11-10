@@ -24,68 +24,214 @@
             <p class="my-auto mx-auto align-middle block">Ahmad#4444</p>
 
           </div>
-      </div>
 
-        <div class="p-5 space-y-5 mt-5" style="overflow-y: scroll;height:48vh;">
-        
-            <DashboardContentComponentsToggle title="Notifications" description=
-            "
-            Allow Siden to send you notifications when you receive a message or a friend request.
-            "
-            action="https://jsonplaceholder.typicode.com/todos/1" 
-            ></DashboardContentComponentsToggle>
-            <DashboardContentComponentsToggle title="Privacy" description="
-            Allow Siden to use your data to improve your experience. Disabling this will only disable the use of your data for analytics and marketing purposes. Your data will still be used for authentication and security purposes.
-            "
-            action="https://jsonplaceholder.typicode.com/todos/2" 
-            ></DashboardContentComponentsToggle>
-            <DashboardContentComponentsToggle title="
-            Dark Mode
-            " description="
-            Enable dark mode
-            "
-            action="https://jsonplaceholder.typicode.com/todos/3" 
-            ></DashboardContentComponentsToggle>
+          <div class="container mx-auto">
 
-            <!-- <DashboardContentSettings></DashboardContentSettings>
-            <DashboardContentSettings></DashboardContentSettings>
-            <DashboardContentSettings></DashboardContentSettings>
-            <DashboardContentSettings></DashboardContentSettings>
-            <DashboardContentSettings></DashboardContentSettings>
-            <DashboardContentSettings></DashboardContentSettings>
-            <DashboardContentSettings></DashboardContentSettings> -->
+              <h3 class="text-3xl mt-8 font-extrabold text-white userStats">Your stats</h3>
+
+              <div class="flex justify-between space-x-1 mt-5">
+                
+                <div class=" p-5 text-white rounded-xs text-center shadow-lg stat">
+                  <i class="text-xl fad fa-users"></i>
+                  <p class="font-light"><strong>Friends:</strong> {{15}}</p>
+                </div>
+                <div class=" p-5 text-white rounded-xs text-center shadow-lg stat">
+                  <i class="text-xl fad fa-coins"></i>
+                  <p class="font-light"><strong>Balance:</strong> {{192599}}</p>
+                </div>
+                <div class=" p-5 text-white rounded-xs text-center shadow-lg stat">
+                  <i class="text-xl fad fa-sensor"></i>
+                  <p class="font-light"><strong>Servers:</strong> {{4}}</p>
+                </div>
+
+              </div>
             
+          </div>         
+
+      </div>
+      
+        <div class="p-3 container mx-auto settingArea" style="overflow-y: scroll;">
+          
+          <h3 class="text-3xl mt-0 space-y-0 font-extrabold text-white userStats mb-5">Settings</h3>
+        
+            <div class="space-y-4">
+              <div class="select-language flex justify-between">
+              <div>
+                <p class="text-white font-extrabold text-2xl">Language</p>
+                <p class="text-sm font-regular text-gray-400 mb-2 mt-2">
+                  Select your language
+                </p>
+              </div>
+              <select class="rounded-md bg-transparent text-white font-light">
+                <option value="English">English</option>
+                <option value="Arabic">Arabic</option>
+                <option value="French">French</option>
+                <option value="German">German</option>
+                <option value="Spanish">Spanish</option>
+              </select>
+
+              </div>
+
+              <DashboardContentComponentsToggle title="Notifications" description=
+              "
+              Allow Siden to send you notifications when you receive a message or a friend request.
+              "
+              message="Are you sure you want to toggle notifications?"
+              action="https://jsonplaceholder.typicode.com/todos/1" 
+              ></DashboardContentComponentsToggle>
+              <DashboardContentComponentsToggle title="Privacy" description="
+              Allow Siden to use your data to improve your experience. Disabling this will only disable the use of your data for analytics and marketing purposes. Your data will still be used for authentication and security purposes.
+              "
+              message="Are you sure you want to toggle privacy?"
+              action="https://jsonplaceholder.typicode.com/todos/2" 
+              ></DashboardContentComponentsToggle>
+              <DashboardContentComponentsToggle title="
+              Dark Mode
+              " description="
+              Enable dark mode
+              "
+              message="Are you sure you want to toggle dark mode?"
+              action="https://jsonplaceholder.typicode.com/todos/3" 
+              ></DashboardContentComponentsToggle>     
+            </div>
+
         </div>
+        
     </div>
 
     <div v-else-if="contentPage == 'leaderboard'" class="align-top m-0 p-2 bg-innerdark innerContent">
+        <!-- <GeneralModal></GeneralModal> -->
         <div class="leaderboard_table">
           <table>
-            <tr>
+            <tr class="lb_head">
               <th class="lb_rank">Rank</th>
               <th class="lb_xp">Rating</th>
-              <th class="lb_username">Username</th>
+              <th class="lb_userIcon"><span>Username</span></th>
+              <th class="lb_username"></th>
               <th class="lb_level">Games Won</th>
             </tr>
-              <tr v-for="item in 5">
-                <td class="lb_rank">{{item}}</td>
+              <tr v-for="(item,index) in 25" :class="{'leaderboard_top_object': index==0,'leaderboard_second_object': index==1}">
+                <td class="lb_rank" :class="{'leaderboard_top': index == 0}"><span style="font-size:25px;">{{item}}</span> <i v-if="index == 0" class='fa fa-star text-xs text-yellow-300 ml-2' style="transform:translateY(-3.5px)"></i></td>
                 <td class="lb_xp">1000</td>
-                <td class="lb_username">Ahmad</td>
+                <td class="lb_userIcon"><img src="https://picsum.photos/500/500" :class="{'leaderboard_topOneImage': index == 0}"></td>
+                <td class="lb_username align-middle">
+                <span class="align-middle my-auto">Ahmad</span>
+                <p class="text-gray-400 text-xs">ID10101</p>
+                </td>
                 <td class="lb_level">100</td>
               </tr>
           </table>
         </div>
     </div>
 
-    <div class="align-top m-0 p-2 bg-innerdark" v-else>
+    <div v-else-if="contentPage == 'server'" class="align-top m-0 p-2 bg-innerdark innerContent">
 
-        <h1 class="p-5 bg-white rounded">nothing here to show</h1>
+      <div class="container mx-auto p-5">
+        
+        <header class="flex text-white items-center justify-between">
+          <div class="flex items-center space-x-4">
+            <img :src="currentServer.img" class="server_pic">
+            <h2 class="text-2xl">
+
+              {{currentServer.name}}
+
+            </h2>
+          </div>
+
+        </header>
+
+        <div
+          class="flex flex-col md:flex-row md:space-x-4 mt-4"
+        >
+          <div class="flex-1">
+            <div class="bg-neutral-900 p-4 rounded-md">
+              <h3 class="text-xl font-bold">Server Info</h3>
+              <p class="text-gray-400 mt-2">
+                {{currentServer.name}}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="server-charts grid grid-cols-2 space-x-5">
+
+          <div class=" 
+          bg-neutral-900 p-4 rounded-md mt-4
+          ">
+
+            <Bar
+            
+              :chart-options="chartOptions"
+              :chart-data="chartData"
+              :chart-id="chartId"
+              :dataset-id-key="datasetIdKey"
+              :plugins="plugins"
+              :css-classes="cssClasses"
+              :styles="styles"
+              :width="700"
+              :height="400"
+            />
+            
+          </div>
+
+          <div class=" 
+          bg-neutral-900 p-4 rounded-md mt-4
+          ">
+
+            <Bar
+            
+              :chart-options="chartOptions"
+              :chart-data="chartData"
+              :chart-id="chartId"
+              :dataset-id-key="datasetIdKey"
+              :plugins="plugins"
+              :css-classes="cssClasses"
+              :styles="styles"
+              :width="700"
+              :height="400"
+            />
+            
+          </div>
+
+        </div>
+
+      </div>
 
     </div>
 
 </template>
 
 <style>
+
+.server_pic {
+  width:100px;
+  height:100px;
+  border-radius:50%;
+}
+
+.userStats {
+    @apply p-3 pl-0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+    /* box-shadow: 25  px 25px 25px 25px rgba(0, 0, 0, 0.5); */
+}
+
+.leaderboard_top {
+  height:120px;
+}
+
+.settingArea {
+  height:42vh;
+}
+
+.stat {
+  width:33%;
+  background-color: rgba(83, 51, 228, 0.548);
+  border-bottom:2px solid #ddd;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
 
 .innerContent {
   width:100% !important;
@@ -108,7 +254,8 @@
 
 .leaderboard_table {
   overflow-y: scroll;
-  height: 90vh;
+  /* overflow-x:hidden; */
+  height: 95vh;
   margin: 0;
 }
 
@@ -120,17 +267,22 @@
 
 .leaderboard_table table tr {
   font-family: 'Tajawal-Bold';
-  border-bottom: 2px solid #222;
+  border-bottom: 2px solid #111;
+  height: 50px;
+  transition: all 0.3s ease-in;
+
 }
 .leaderboard_table table tr:nth-child(even) {
-  background-color: rgba(0, 0, 0, 0.24);
+  background-color: rgba(86, 86, 86, 0.24);
 }
 .leaderboard_table table tr:nth-child(odd) {
-  background-color: rgba(0, 0, 0, 0.12);
+  background-color: rgba(125, 125, 125, 0.12);
 }
-.leaderboard_table table tr:hover {
+.leaderboard_table table tr:hover:not(.lb_head) {
   /* background-color: #ddd; */
-  background-color: rgba(0, 0, 0, 0.24);
+  transition: all 0.3s ease;
+  height: 90px;
+  background-color: rgba(255, 255, 255, 0.12);
 }
 .leaderboard_table table th {
   padding:12px;
@@ -140,17 +292,98 @@
 }
 
 .leaderboard_table table td {
-  padding:12px;
+  padding:16px;
   text-align: left;
   /* color: black; */
   color: white;
 }
+
 
 .leaderboard_table .lb_rank {
   width: 10%;
 }
 .leaderboard_table .lb_username {
   width: 50%;
+}
+
+.leaderboard_table .lb_userIcon {
+  padding:0;
+}
+
+.lb_userIcon span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+  margin: 0;
+  padding-left:13px;
+}
+
+.leaderboard_topIcon img{
+  /* height:120px; */
+  width:180px !important;
+  margin:0 auto;
+  height: 50%;
+}
+
+.leaderboard_table .lb_userIcon img{
+  /* width: 4%; */
+  width: 50px;
+  /* align middle */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  padding:0;
+}
+
+.lb_head th{
+  transition: all 0.3s ease;
+  background-color: #3F3F42;
+  font-size: 1.1rem;
+}
+.lb_head th:hover:not(.lb_username):not(.lb_level){
+  transition: all 0.3s ease;
+  /* height:auto; */
+  background-color: rgba(237, 237, 237,0.2);
+  cursor: crosshair;
+}
+.leaderboard_topOneImage {
+  width:70px !important;
+  /* border: #1CB25B 3px solid; */
+  /* box-shadow: 0 0px 18px 3px #1CB25B; */
+  /* height:40px; */
+  /* border-radius: 50%;
+  margin:0 auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; */
+}
+.leaderboard_top_object {
+  border: #1CB25B 2px solid;
+  box-shadow: 0 0px 18px 3px #1CB25B;
+}
+.leaderboard_top_object.lb_userIcon {
+  width: 100px;
+  border-radius: 0%;
+  border:none;
+}
+
+.leaderboard_top_object.lb_userIcon img{
+ min-width:120px !important;
+ border-radius: 0% !important;
+}
+
+.leaderboard_second_object {
+  /* border: #1CB25B 2px solid; */
+  /* background-color: rgba(252, 15, 15, 0.877) !important; */
+}
+
+
+.leaderboard_table {
+  overflow-y: scroll;
+  /* overflow-x:hidden; */
+  height: 95vh;
+  margin: 0;
 }
 
 .form-switch i {
@@ -238,22 +471,100 @@
   }
 }
 
-@media only screen and (max-width: 558px) {
+@media only screen and (max-width: 568px) {
 
   .dashboard_content {
-    width: 100% !important;
+    
+    /* width:500px !important; */
+
+  }
+
+  .settingArea {
+    /* width:50%; */
+    height: 71.8vh;
+  }
+
+  .outer, .pack, .sidebar, .innerContent, .dashboard_content {
+    /* height:113.4vh; */
+    height:max-content;
   }
 
 }
 
 </style>
 
+<script setup>
+  
+  // import user state from the store using pinia
+  import { userState } from '~/stores/user'
+  import { serverState } from '~/stores/server'
+
+  const user = userState()
+
+  const server = serverState()
+
+  const route = useRoute();
+
+  const currentServer = server.getServerById(route.params.id)
+
+  console.log(currentServer)
+
+
+</script>
+
 <script>
+import { Bar } from 'vue-chartjs'
+import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
+
+ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
 export default {
-
-    props:['contentPage'],
-
+  name: 'BarChart',
+  components: { Bar },
+  props: {
+    contentPage: {
+      type: String,
+      default: ''
+    },
+    chartId: {
+      type: String,
+      default: 'bar-chart'
+    },
+    datasetIdKey: {
+      type: String,
+      default: 'label'
+    },
+    width: {
+      type: Number,
+      default: 50
+    },
+    height: {
+      type: Number,
+      default: 50
+    },
+    cssClasses: {
+      default: '',
+      type: String
+    },
+    styles: {
+      type: Object,
+      default: () => {}
+    },
+    plugins: {
+      type: Object,
+      default: () => {}
+    }
+  },
+  data() {
+    return {
+      chartData: {
+        labels: [ 'January', 'February', 'March' ],
+        datasets: [ { data: [40, 20, 12] } ]
+      },
+      chartOptions: {
+        responsive: true
+      }
+    }
+  }
 }
-
 </script>
