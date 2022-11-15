@@ -20,7 +20,9 @@
     "@fortawesome/vue-fontawesome": "^3.0.1",
     "@pinia/nuxt": "^0.4.2",
     "chart.js": "^3.9.1",
+    "cookie-universal-nuxt": "^2.2.2",
     "pinia": "^2.0.22",
+    "pinia-plugin-persistedstate-2": "^2.0.3",
     "vue-chartjs": "^4.1.2"
   }
 }
