@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 export const usePlayerControls = defineStore('playerControls', {
 
     state: () => ({
-        playing: true,
+        playing: false,
         
         // player button states
         playState: true,
@@ -66,4 +66,6 @@ export const usePlayerControls = defineStore('playerControls', {
         }
 
     },
+
+    persist: true,
 })

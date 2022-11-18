@@ -65,9 +65,18 @@
 <script setup>
     import { useOuterMargin } from "/stores/margin";
     import { usePlayerControls } from "/stores/player";
+    import { useAuthStore } from '@/stores/auth'
 
     const outerMargin = useOuterMargin();
     const player = usePlayerControls();
+    
+
+    const auth = useAuthStore()
+
+    // auth.login('ahmad7499','ahmad123')
+
+    auth.verify()
+
 
 </script>
 <script>

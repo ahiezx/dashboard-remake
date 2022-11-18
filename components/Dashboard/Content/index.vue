@@ -21,7 +21,7 @@
             ">
               <img src="https://picsum.photos/500/500" alt="your profile" width="64" class="rounded-full align-middle mr-2 block">
             </div>
-            <p class="my-auto mx-auto align-middle block">Ahmad#4444</p>
+            <p class="my-auto mx-auto align-middle block">{{auth.user}}</p>
 
           </div>
 
@@ -498,6 +498,7 @@
   // import user state from the store using pinia
   import { userState } from '~/stores/user'
   import { serverState } from '~/stores/server'
+  import { useAuthStore } from '@/stores/auth'
 
   const user = userState()
 
@@ -507,7 +508,8 @@
 
   const currentServer = server.getServerById(route.params.id)
 
-  console.log(currentServer)
+  const auth = useAuthStore()
+
 
 
 </script>

@@ -10,6 +10,9 @@ export const useAuthStore = defineStore('auth', {
     getters: {
         isAuthenticated() {
             return !!this.user
+        },
+        isTokenVerified() {
+            return this.verify()
         }
     },
 
@@ -21,10 +24,11 @@ export const useAuthStore = defineStore('auth', {
             })
             const data = await response.json()
             if (data.status === 200) {
-                this.user = data.user
-                this.token = data.accessToken
+                this.user = data.user.username
+                this.token = data.user.accessToken
             }
-            console.log(this.user)
+            // console.log(data)
+            return data
         },
 
         async register(username, password) {
@@ -33,10 +37,37 @@ export const useAuthStore = defineStore('auth', {
             })
             const data = await response.json()
             if (data.status === 200) {
-                this.user = data.user
-                this.token = data.accessToken
+                this.user = data.user.username
+                this.token = data.user.accessToken
             }
-            console.log(data, this.user, this.token)
+            // console.log(data, this.user, this.token)
+            return data
+        },
+
+        async verify() {
+            const response = await fetch(`http://localhost:4000/verify`, {
+                method: 'get',
+                headers: {
+                    'Authorization': `Bearer ${this.token}`
+                }
+            })
+            if (response.status == 403) {
+                this.user = null
+                this.token = null
+                console.log('token expired')
+                return false
+            }
+            const data = await response.json()
+            if(data.status != 200) {
+                this.user = null
+                this.token = null
+                console.log('not verified')
+                return false
+            }
+            return true
+            // return true if verified and false if not
+            // console.log(data.status != 200)
+            // return data.status == 200
         },
 
         async logout() {
@@ -45,4 +76,7 @@ export const useAuthStore = defineStore('auth', {
         }
 
     },
+
+    persist: true,
+
 })

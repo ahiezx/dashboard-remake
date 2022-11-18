@@ -14,7 +14,7 @@ export const serverState = defineStore('serverState', {
         
         getServerById(id) {
 
-            console.log(id)
+            // console.log(id)
 
             return {
                 id: id,
