@@ -1,6 +1,6 @@
 <template>
 
-<div v-if="route.name != 'server-id'">
+<div v-if="!route.name.includes('server-id')">
    <div class="md:text-xs sidebar_controls xffg" aria-label="Sidebar">
       <DashboardSidebarComponentsTitle title="Overview"></DashboardSidebarComponentsTitle>
       <div class="container mx-auto space-y-1.5 p-3">
@@ -48,8 +48,8 @@
          <h4
          class="text-gray-400 text-sm pt-1 font-extrabold uppercase tracking-wider"
          >Server Information</h4>         
-         <NuxtLink class="btn-generic" :to="route.path"><i class="fad fa-info-circle"></i><span>Server Status</span></NuxtLink>
-         <NuxtLink class="btn-generic" to="/account"><i class="fad fa-users"></i><span>Members</span></NuxtLink>
+         <NuxtLink class="btn-generic" :to="'/server/'+route.params.id"><i class="fad fa-info-circle"></i><span>Server Status</span></NuxtLink>
+         <NuxtLink class="btn-generic" :to="'/server/'+route.params.id + '/members'"><i class="fad fa-users"></i><span>Members</span></NuxtLink>
          <h4
          class="text-gray-400 text-sm pt-1 font-extrabold uppercase tracking-wider"
          >Moderation</h4>         

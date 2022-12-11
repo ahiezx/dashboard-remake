@@ -6,8 +6,8 @@ export const userState = defineStore('userState', {
         name: 'John Doe',
         credits: 0,
         serverList: [
-            { id: 1, name: 'Server 1', img: 'https://picsum.photos/id/' + 1 + '/200/300'},
-            { id: 2, name: 'Server 2', img: 'https://picsum.photos/id/' + 2 + '/200/300'},
+            { id: 123, name: 'Server 1', img: 'https://picsum.photos/id/' + 1 + '/200/300'},
+            { id: 222, name: 'Server 2', img: 'https://picsum.photos/id/' + 2 + '/200/300'},
             { id: 3, name: 'Server 3', img: 'https://picsum.photos/id/' + 3 + '/200/300'},
             { id: 4, name: 'Server 4', img: 'https://picsum.photos/id/' + 4 + '/200/300'},
             { id: 5, name: 'Server 5', img: 'https://picsum.photos/id/' + 5 + '/200/300'},
